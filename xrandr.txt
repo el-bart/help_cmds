@@ -1,0 +1,4 @@
+xhost +LOCAL:
+
+xrandr --output VGA1 --right-of LVDS1
+xrandr --output VGA1 --same-as  LVDS1

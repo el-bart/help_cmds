@@ -1,0 +1,1 @@
+lpr -P hp_hell -o InputSlot=Default -o Resolution=300dpi -o PageSize=A4
