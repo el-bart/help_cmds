@@ -1,0 +1,3 @@
+# TLER (https://en.wikipedia.org/wiki/TLER)
+smartctl -l scterc /dev/sdX       # list
+smartctl -l scterc,70,70 /dev/sdX # set to R=7s,W=7s (useful for RAID)

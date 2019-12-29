@@ -1,0 +1,16 @@
+# fast-forward branch w/o checking it out
+git fetch bb master:master
+
+# common ancestor of 2 branches (eg. for 3-way merge)
+git merge-base branch2 branch3
+
+# extract subdir as a separate repo
+git clone XXX
+cd XXX
+git subtree split --prefix=some/dir/ --branch=extracted
+cd some/new/repo
+git init
+git pull --allow-unrelated-histories /path/to/XXX repo
+
+# remove element (file/dir) from whole history
+git filter-branch -f --prune-empty --index-filter 'git rm --cached --ignore-unmatch unrelevant* insecure*.txt *.unneeded'

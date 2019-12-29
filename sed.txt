@@ -1,0 +1,2 @@
+# print all lines after a pattern
+sed '0,/REGEX/d'

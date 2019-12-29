@@ -1,0 +1,3 @@
+time rsync -rzPl          remote:/path/to/stuff/ stuff
+time rsync -rzPl --delete remote:/path/to/stuff/ stuff
+time rsync -avz           remote:/path/to/stuff/ stuff

@@ -1,0 +1,17 @@
+# set window size to 20 LOCs
+winheight SRC 20
+
+# print hex + ASCII of a given memory region
+xac <addr> <bytes>
+
+info registers
+info locals
+info args
+
+# change --tui look
+layout {asm|regs|split|src}
+
+# "mov dst,src" disaply mode:
+set disassembly-flavor intel
+ni # next instruction
+si # step instruction

@@ -1,0 +1,14 @@
+## query recorder
+cat /proc/sys/dev/cdrom/info
+
+## recording ISO to CD/DVD:
+genisoimage -R -D -J -o cd.iso cd/
+wodim dev=/dev/dvdrw -v speed=48 -data /input/data/cd.iso
+
+## recording UDF to BL:
+truncate --size=24700MB /bigdisk/mybr.udf # 25G does not fit by ~200MB...
+mkudffs /bigdisk/mybr.udf
+mount /bigdisk/mybr.udf /mnt/test
+...
+umount /mnt/test
+growisofs -speed=2 -Z /dev/dvd=/bigdisk/mybr.udf

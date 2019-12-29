@@ -1,0 +1,4 @@
+xdg-mime query default application/pdf
+l /usr/share/applications/
+xdg-mime default okularApplication_pdf.desktop application/pdf
+xdg-mime query default application/pdf

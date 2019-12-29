@@ -1,0 +1,5 @@
+# https://docs.docker.com/machine/drivers/azure/
+# https://wiki.debian.org/Cloud/MicrosoftAzure
+time docker-machine create --driver azure --azure-subscription-id "$SUB" --azure-image "credativ:Debian:9-backports:latest" --azure-subnet-prefix 192.168.0.0/24 --azure-open-port 80 --azure-location westeurope --azure-size Basic_A0 test-name
+time docker-machine create --driver azure --azure-subscription-id "$SUB" --azure-image "credativ:Debian:9:latest" --azure-subnet-prefix 192.168.0.0/24 --azure-open-port 80 --azure-location westeurope --azure-size Basic_A0 test-name
+time docker-machine create --driver azure --azure-subscription-id "$SUB" --azure-subnet-prefix 192.168.0.0/24 --azure-open-port 80 --azure-location westeurope --azure-size Basic_A0 test-name

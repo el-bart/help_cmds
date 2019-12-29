@@ -1,0 +1,2 @@
+# -u => erro on unset var
+set -eu -o pipefail

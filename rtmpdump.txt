@@ -1,0 +1,19 @@
+## as root:
+
+iptables -t nat -A OUTPUT -p tcp --dport 1935 -m owner \! --uid-owner root -j REDIRECT
+# rtmpdump
+rtmpsrv
+iptables -t nat -D OUTPUT -p tcp --dport 1935 -m owner \! --uid-owner root -j REDIRECT
+
+
+## command will pop up - paste it as a regular user.
+
+# example:
+rtmpdump \
+  -r "rtmp://stream14.polskieradio.pl/pr4_video" \
+  -a "pr4_video" \
+  -f "WIN 11,2,202,235" \
+  -W "http://player.polskieradio.pl/flash/player.swf" \
+  -p "http://player.polskieradio.pl" \
+  -y "czworka.sdp" \
+  -o "czworka.flv"
