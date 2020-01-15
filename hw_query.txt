@@ -3,3 +3,6 @@ getconf -a
 head /sys/devices/system/cpu/vulnerabilities/*
 cat /proc/sys/dev/cdrom/info
 lsblk
+lscpu
+lsusb
+lspci
