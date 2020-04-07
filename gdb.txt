@@ -15,3 +15,8 @@ layout {asm|regs|split|src}
 set disassembly-flavor intel
 ni # next instruction
 si # step instruction
+
+# do action on a thread w/o changing to it
+thread apply 42 backtrace
+# do action on all threads
+thread apply all backtrace
