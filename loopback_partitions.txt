@@ -1,0 +1,5 @@
+kpartx -v -a some_disk.img
+mount /dev/mapper/loop0p2 /mnt/loop0/
+
+umount /mnt/loop0/
+kpartx -v -d some_disk.img
