@@ -14,3 +14,6 @@ git pull --allow-unrelated-histories /path/to/XXX repo
 
 # remove element (file/dir) from whole history
 git filter-branch -f --prune-empty --index-filter 'git rm --cached --ignore-unmatch unrelevant* insecure*.txt *.unneeded'
+
+# change commit author
+git commit --amend --author="foo bar <foo.bar@stu.ff>" --no-edit
