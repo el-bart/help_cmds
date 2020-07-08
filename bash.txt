@@ -1,2 +1,10 @@
 # -u => erro on unset var
 set -eu -o pipefail
+
+array=("elem 1" "elem 2")
+array+=("elem 3")
+array+=("elem 4" "elem 5")
+for e in "${array[@]}"
+do
+  echo "$e"
+done
