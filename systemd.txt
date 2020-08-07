@@ -1,0 +1,3 @@
+# systemd[1]: start request repeated too quickly for foobar.service
+systemctl reset-failed foobar.service
+systemctl restart      foobar.service
