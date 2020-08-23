@@ -7,7 +7,7 @@ wodim dev=/dev/dvdrw -v speed=48 -data /input/data/cd.iso
 
 ## recording UDF to BL:
 truncate --size=24700MB /bigdisk/mybr.udf # 25G does not fit by ~200MB...
-mkudffs /bigdisk/mybr.udf
+mkudffs --blocksize=2048 /bigdisk/mybr.udf
 mount /bigdisk/mybr.udf /mnt/test
 ...
 umount /mnt/test
