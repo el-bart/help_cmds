@@ -1,3 +1,18 @@
+# commands:
+parted /dev/foobar
+mktable gpt
+mkpart primary fat32 0% 100%
+set 1 msftdata on
+print
+print free
+quit
+
+mkfs.ntfs -f /dev/foobar
+mount -t ntfs /dev/foobar /mnt/meh
+
+
+# example `print` output:
+
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -5,5 +20,3 @@ Disklabel type: gpt
 
 Type
 Microsoft basic data
-
-mount -t vfat
