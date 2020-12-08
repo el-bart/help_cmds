@@ -20,3 +20,6 @@ https://github.com/newren/git-filter-repo/
 
 # change commit author
 git commit --amend --author="foo bar <foo.bar@stu.ff>" --no-edit
+
+# make script executable (eg. on Windows)
+git update-index --chmod=+x my_script
