@@ -1,3 +1,11 @@
+# -r -> recursive
+# -P -> progress
+# -l -> copy symlinks as aymlinks
+# -z -> compress
+# -v -> verbose
+# -a -> archive
+# --delete -> delete files from destination that are not in source
+
 time rsync -rzPl          remote:/path/to/stuff/ stuff
 time rsync -rzPl --delete remote:/path/to/stuff/ stuff
 time rsync -avz           remote:/path/to/stuff/ stuff
