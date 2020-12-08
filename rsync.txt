@@ -5,6 +5,7 @@
 # -v -> verbose
 # -a -> archive
 # --delete -> delete files from destination that are not in source
+# --bwlimit=4.2m -> limit I/O to 4.2 MB/s
 
 time rsync -rzPl          remote:/path/to/stuff/ stuff
 time rsync -rzPl --delete remote:/path/to/stuff/ stuff
