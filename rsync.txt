@@ -6,6 +6,7 @@
 # -a -> archive
 # --delete -> delete files from destination that are not in source
 # --bwlimit=4.2m -> limit I/O to 4.2 MB/s
+# -e 'ssh -i /path/to/another/key' -> add extra parameters to SSH (here: use a different SSH key)
 
 time rsync -rzPl          remote:/path/to/stuff/ stuff
 time rsync -rzPl --delete remote:/path/to/stuff/ stuff
