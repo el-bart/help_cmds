@@ -2,6 +2,7 @@ mplayer -cache 128 -tv driver=v4l2:device=/dev/video0 -vo xv tv://
 mplayer -cache 128 -tv driver=v4l2:width=640:height=480:outfmt=i420:device=/dev/video0 -vo xv tv://
 mplayer -tv driver=v4l2:width=1920:height=1080:device=/dev/video0 tv://
 v4l2-ctl -v width=1920,height=1080
+mplayer -vo jpeg -frames 3 tv://
 
 mencoder fileA_acarm_ng.avi -o file.avi -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=800 -oac mp3lame -lameopts q=4
 mencoder -oac pcm -ovc copy -o full.avi in1.avi in2.avi in3.avi
