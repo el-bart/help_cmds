@@ -1,0 +1,2 @@
+# don't display progress, but still show errors and exit non-0 when failed
+curl --silent --show-error --fail --fail-early http://foo.bar/stuff
