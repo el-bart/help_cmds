@@ -1,0 +1,4 @@
+pulsemixer
+
+pactl list sources short
+pactl list sinks short
