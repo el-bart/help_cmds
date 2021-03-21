@@ -1,4 +1,9 @@
+# ncurses-based mixer with capabilities of switching devices
 pulsemixer
 
+# listing available devices
 pactl list sources short
 pactl list sinks short
+
+# enable loopback from mic to headphones
+pactl load-module module-loopback
