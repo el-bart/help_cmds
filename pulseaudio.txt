@@ -7,3 +7,9 @@ pactl list sinks short
 
 # enable loopback from mic to headphones
 pactl load-module module-loopback
+
+parec -d steam.monitor | oggenc -b 192 -o steam.ogg --raw -
+
+# make volumes independend
+vi /etc/pulse/daemon.conf
+flat-volumes = no
