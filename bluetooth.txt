@@ -4,8 +4,5 @@ bluetoothctl
 # default-agent
 # scan on
 # pair XX:XX:XX:XX:XX:XX
-# connect XX:XX:XX:XX:XX:XX
 # trust XX:XX:XX:XX:XX:XX
-
-# shows % of battery (for supported devices)
-upower -u
+# connect XX:XX:XX:XX:XX:XX

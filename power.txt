@@ -1,0 +1,5 @@
+# shows laptop's battery status
+acpi
+
+# shows % of battery (for supported devices) for: BTLE and devices that's kernel driver supports this read out
+upower -u
