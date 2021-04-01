@@ -1,6 +1,7 @@
 # -u => erro on unset var
 set -eu -o pipefail
 
+# arrays
 array=("elem 1" "elem 2")
 array+=("elem 3")
 array+=("elem 4" "elem 5")
@@ -8,3 +9,14 @@ for e in "${array[@]}"
 do
   echo "$e"
 done
+
+
+# trap with function
+function finish()
+{
+  echo 42
+}
+trap finish EXIT
+
+# direct trap
+trap "echo 42" EXIT
