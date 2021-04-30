@@ -19,4 +19,4 @@ function finish()
 trap finish EXIT
 
 # direct trap
-trap "echo 42" EXIT
+trap 'echo 42' EXIT
