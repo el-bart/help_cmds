@@ -12,6 +12,10 @@ cd some/new/repo
 git init
 git pull --allow-unrelated-histories /path/to/XXX repo
 
+# remove anything but given dirs from repo's history
+# (based on: https://cjohansen.no/git-subtree-multiple-dirs/)
+git filter-branch -f --prune-empty --tree-filter 'find -type f -a ! \( -path "./foo/*" -o -path "./bar/*" \) -exec rm -f {} +'
+
 # remove element (file/dir) from whole history
 git filter-branch -f --prune-empty --index-filter 'git rm --cached --ignore-unmatch unrelevant* insecure*.txt *.unneeded'
 
