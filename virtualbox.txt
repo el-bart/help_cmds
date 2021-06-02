@@ -1,0 +1,4 @@
+# VM's dynamic disk shrink:
+# https://askubuntu.com/questions/444598/how-do-i-shrink-a-dynamically-growing-vdi-disk-from-virtualbox
+zerofree /dev/sdaX
+VBoxManage modifyhd <name>.vdi --compact
