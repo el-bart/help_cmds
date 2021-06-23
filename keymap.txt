@@ -1,0 +1,11 @@
+localectl set-keymap us
+
+# CentOS
+/etc/sysconfig/keyboard
+
+# Debian
+cat /etc/default/keyboard
+XKBLAYOUT="us"
+
+dpkg-reconfigure console-data
+dpkg-reconfigure keyboard-configuration
