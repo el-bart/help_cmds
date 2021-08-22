@@ -1,0 +1,8 @@
+# wpasupplicant:
+apt install wpasupplicant
+wpa_passphrase my_ssid my_password > /etc/wifi/my_ssid.conf
+wpa_supplicant -c /etc/wifi/my_ssid.conf -i wlan0
+
+# network manager
+apt install network-manager
+nmtui # and go from there :)
