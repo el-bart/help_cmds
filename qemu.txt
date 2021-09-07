@@ -1,0 +1,61 @@
+# regain keyboard/mouse from VM: Alt_L + Ctrl_L + G
+
+# create new, empty image:
+qemu-img create -f qcow2 -o size=32G disk.img
+
+# create CoW image, based on a base reference image (so that base is nerver changed):
+qemu-img create -f qcow2 -b base_disk.qcow2 vm01.qcow2
+
+
+# start VM with 512MB RAM, 1 CPU, using disk image, w/o GUI
+qemu-system-x86_64 \
+  -drive file=os.qcow2 \
+  -m 512 \
+  -smp 1 \
+  -device rtl8139,netdev=nd1 \
+  -nographic
+
+
+# KVM-based VM with 5G of RAM, 2 CPUs, NATed network (internet), Pulseaudio-based sound, and use Tails Live CD as a base
+qemu-system-x86_64 \
+  -enable-kvm \
+  -vga virtio \
+  -cdrom tails-amd64-*.iso \
+  -m 5G \
+  -smp 2 \
+  -nic user,model=virtio-net-pci \
+  -audiodev pa,id=snd0 -device AC97,audiodev=snd0
+
+
+# startk VM w/o GUI display - redirect everything to the console, via serial port, instead.
+# note that it requires 'console=ttyS0' to be added to kernel's command line interface
+qemu-system-x86_64 \
+  -enable-kvm \
+  -m 3G \
+  -smp 2 \
+  -drive file=os.qcow2 \
+  -boot order=cd \
+  -display none \
+  -serial mon:stdio
+
+
+# NAT-based networking (works in userspace)
+-nic user,model=virtio-net-pci
+
+# Pulseaudio-based sound I/O
+-audiodev pa,id=snd0 -device AC97,audiodev=snd0
+
+
+# create network bridge (needs root):
+brctl addbr vmbr0
+ip link set dev vmbr0 up
+ip a add 192.168.42.1/24 dev vmbr0
+
+# add virtual 'tap' interfaces and connect to the bridge (needs root):
+ip tuntap add mode tap vm0
+brctl addif vmbr0 vm0
+
+# add 2 network cards, based on 'tap' virtual interfaces, with exlicit MAC addresses.
+# note that it's important to provide custom MAC addresses, as QEMU will not randomize/make these unique across many VMs!
+-nic tap,ifname=vm0,script=no,downscript=no,mac=52:54:00:11:11:11
+-nic tap,ifname=vm0,script=no,downscript=no,mac=52:54:00:22:22:22
