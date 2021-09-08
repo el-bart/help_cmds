@@ -71,6 +71,8 @@ brctl addif vmbr0 vm0
 
 # use monitor via socket
 -monitor unix:./vm.monitor,server,nowait
+# socket can later on be I/Oed from console via:
+socat ./monitor.socket STDIO
 # use monitor directly from console
 -monitor stdio
 
