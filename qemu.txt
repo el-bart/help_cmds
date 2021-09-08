@@ -59,3 +59,26 @@ brctl addif vmbr0 vm0
 # note that it's important to provide custom MAC addresses, as QEMU will not randomize/make these unique across many VMs!
 -nic tap,ifname=vm0,script=no,downscript=no,mac=52:54:00:11:11:11
 -nic tap,ifname=vm0,script=no,downscript=no,mac=52:54:00:22:22:22
+
+
+# use VNC for X11
+-vnc 0.0.0.0:4242
+
+
+# serial port can be also exposed via websocket
+-serial websocket:127.0.0.1:4242,server,nowait
+
+
+# use monitor via socket
+-monitor unix:./vm.monitor,server,nowait
+# use monitor directly from console
+-monitor stdio
+
+# monitor control keys
+C-a h    print this help
+C-a x    exit emulator
+C-a s    save disk data back to file (if -snapshot)
+C-a t    toggle console timestamps
+C-a b    send break (magic sysrq)
+C-a c    switch between console and monitor
+C-a C-a  sends C-a
