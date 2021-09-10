@@ -1,0 +1,9 @@
+# check state
+cat /proc/mdstat
+
+# add disk to RAID
+mdadm --add /dev/md1 /dev/sdc1
+
+# add new disk to array (say: 3rd disk to RAID1):
+mdadm --add /dev/md1 /dev/sdc1
+mdadm --grow /dev/md1 --raid-devices=3
