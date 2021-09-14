@@ -1,2 +1,9 @@
 # parallel download client
 aria2c
+
+# set of curl flags that will not be verbose but still will show errors and return error codes back to shell
+curl \
+  --silent \
+  --show-error \
+  --fail \
+  "https://foo/bar/net"
