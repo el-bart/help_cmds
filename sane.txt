@@ -15,3 +15,6 @@ scanimage ... --button-controlled=yes
 
 # combine images into PDF document
 img2pdf *.jpg --output combined.pdf
+
+# 1-liner for scanning NxA4, button controlled, starting Gimp for post-porcessing and then outputing as a single PDF file
+N=1 ; rm -vf * && for((i=1; i<=$N; ++i)) ; do echo "ready to scan img $i" ; time imagescan_a4 300 p$i.jpg --button-controlled=yes ; done && gimp *.jpg && img2pdf *.jpg --output combined.pdf
