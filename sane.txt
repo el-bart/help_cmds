@@ -7,6 +7,9 @@ scanimage \
   --format 'jpeg' \
   --output-file "out.jpg"
 
+# to trigger scan with a button
+scanimage ... --button-controlled=yes
+
 # fix color curves with gimp
 ... TODO ...
 
