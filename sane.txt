@@ -1,0 +1,14 @@
+# scan
+scanimage \
+  --device-name "${SCANNER:-pixma:04A91913_470924}" \
+  --progress \
+  --resolution "$300dpi" \
+  --mode Color \
+  --format 'jpeg' \
+  --output-file "out.jpg"
+
+# fix color curves with gimp
+... TODO ...
+
+# combine images into PDF document
+img2pdf *.jpg --output combined.pdf
