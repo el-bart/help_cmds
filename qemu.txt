@@ -5,6 +5,19 @@ qemu-img create -f qcow2 -o size=32G disk.img
 
 # create CoW image, based on a base reference image (so that base is nerver changed):
 qemu-img create -f qcow2 -b base_disk.qcow2 vm01.qcow2
+# common image formats with example I/O speed on cont. write on slow SSD:
+# qcow2 -> ~40MB/s
+# qed -> ~100MB/s
+# raw -> ~100MB/s
+
+
+# convert VirtualBox's vdi image to QEMU's qcow2 (-p is for progress display only; -m 1 means using single thread (not to kill I/O)):
+qemu-img convert -p -m 1 -f vdi -O qcow2 in.vdi out.qcow2
+
+# optimizing file usage:
+-drive file=img.qcow2,l2-cache-size=8M
+# in case of image based on other image ("becked image") also use options:
+-drive ...,cache-clean-interval=60
 
 
 # start VM with 512MB RAM, 1 CPU, using disk image, w/o GUI
@@ -84,3 +97,12 @@ C-a t    toggle console timestamps
 C-a b    send break (magic sysrq)
 C-a c    switch between console and monitor
 C-a C-a  sends C-a
+
+
+# adding USB by host path:
+device_add usb-host,hostbus=2,hostport=1.2.2,id=stuff
+device_del stuff
+
+# adding USB by VID:PID
+device_add usb-host,vendorid=0x1234,productid=0x5678
+# TODO: how to delete it?
