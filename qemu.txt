@@ -6,6 +6,7 @@ qemu-img create -f qcow2 -o size=32G disk.img
 # create CoW image, based on a base reference image (so that base is nerver changed):
 qemu-img create -f qcow2 -b base_disk.qcow2 vm01.qcow2
 # common image formats with example I/O speed on cont. write (for reference - underlying disk write was ~160[MB/s]):
+# vdi   -> ~120[MB/s]
 # qcow2 -> ~125[MB/s]
 # qed   -> ~130[MB/s]
 # raw   -> ~130[MB/s]
