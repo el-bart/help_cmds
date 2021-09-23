@@ -5,10 +5,11 @@ qemu-img create -f qcow2 -o size=32G disk.img
 
 # create CoW image, based on a base reference image (so that base is nerver changed):
 qemu-img create -f qcow2 -b base_disk.qcow2 vm01.qcow2
-# common image formats with example I/O speed on cont. write on slow SSD:
-# qcow2 -> ~40MB/s
-# qed -> ~100MB/s
-# raw -> ~100MB/s
+# common image formats with example I/O speed on cont. write (for reference - underlying disk write was ~160[MB/s]):
+# qcow2 -> ~125[MB/s]
+# qcow2 -> ~125[MB/s] (l2-cache-size=8M)
+# qed   -> ~130[MB/s]
+# raw   -> ~130[MB/s]
 
 
 # convert VirtualBox's vdi image to QEMU's qcow2 (-p is for progress display only; -m 1 means using single thread (not to kill I/O)):
