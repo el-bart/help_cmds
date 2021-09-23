@@ -7,18 +7,12 @@ qemu-img create -f qcow2 -o size=32G disk.img
 qemu-img create -f qcow2 -b base_disk.qcow2 vm01.qcow2
 # common image formats with example I/O speed on cont. write (for reference - underlying disk write was ~160[MB/s]):
 # qcow2 -> ~125[MB/s]
-# qcow2 -> ~125[MB/s] (l2-cache-size=8M)
 # qed   -> ~130[MB/s]
 # raw   -> ~130[MB/s]
 
 
 # convert VirtualBox's vdi image to QEMU's qcow2 (-p is for progress display only; -m 1 means using single thread (not to kill I/O)):
 qemu-img convert -p -m 1 -f vdi -O qcow2 in.vdi out.qcow2
-
-# optimizing file usage:
--drive file=img.qcow2,l2-cache-size=8M
-# in case of image based on other image ("becked image") also use options:
--drive ...,cache-clean-interval=60
 
 
 # start VM with 512MB RAM, 1 CPU, using disk image, w/o GUI
