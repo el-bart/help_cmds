@@ -51,6 +51,9 @@ qemu-system-x86_64 \
 # NAT-based networking (works in userspace)
 -nic user,model=virtio-net-pci
 
+# network device that will additionally forward port to a guest
+-nic user,model=virtio-net-pci,hostfwd=tcp:127.0.0.1:1234-:22
+
 # Pulseaudio-based sound I/O
 -audiodev pa,id=snd0 -device AC97,audiodev=snd0
 
