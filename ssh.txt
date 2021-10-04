@@ -1,3 +1,7 @@
+# re-generate SSH host key
 ssh-keygen -b 521 -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
-ssh-keygen -lf /etc/ssh/ssh_host_rsa_key.pub
-ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub
+
+# listing fingerprints of SSH host key (on server)
+ssh-keygen -l f /etc/ssh/ssh_host_rsa_key.pub
+# 1-liner for all of them:
+for f in /etc/ssh/ssh_host_*.pub ; do ssh-keygen -l -f "$f" ; done
