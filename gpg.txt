@@ -9,6 +9,9 @@ gpg --keyid-format LONG --list-keys bartek.szurgot@baszerr.eu
 # send givne key to the server
 gpg --keyserver pgp.mit.edu --send-keys ABCDEF0123456789
 
+# sending via HTTPS:
+https://keys.openpgp.org/upload
+
 # export all keys to a file
 gpg --export --armor john@example.com > john_doe.pub
 
