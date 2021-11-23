@@ -1,0 +1,16 @@
+# list GPG keys, for your mail:
+gpg --keyid-format LONG --list-keys bartek.szurgot@baszerr.eu
+# example output:
+# gpg --keyid-format LONG --list-keys john@example.com
+# pub   rsa4096/ABCDEF0123456789 2018-01-01 [SCEA] [expires: 2021-01-01]
+#       ABCDEF0123456789ABCDEF0123456789
+# uid              [ ultimate ] John Doe
+
+# send givne key to the server
+gpg --keyserver pgp.mit.edu --send-keys ABCDEF0123456789
+
+# export all keys to a file
+gpg --export --armor john@example.com > john_doe.pub
+
+# export given key via ID
+gpg --export --armor ABCDEF0123456789 > john_doe.pub
