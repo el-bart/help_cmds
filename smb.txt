@@ -1,0 +1,38 @@
+# example /etc/samba/smb.conf
+[global]
+  # following 3 lines ensure communication is encrypted on the wire
+  server signing = mandatory
+  smb encrypt = mandatory
+  client signing = mandatory
+  # rest of the config
+  workgroup = my_workgroup
+  security = user
+  encrypt passwords = yes
+  passdb backend = tdbsam
+  log file = /var/log/samba/log.%m
+  max log size = 1000
+  logging = file
+  panic action = /usr/share/samba/panic-action %d
+  server role = standalone server
+  obey pam restrictions = yes
+  unix password sync = no
+  pam password change = no
+  map to guest = bad user
+  usershare allow guests = no
+[shared_stuff]
+  comment = some network stuff
+  path = /path/to/shared/dir
+  valid users = john_doe
+  browsable = no
+  guest ok = no
+  read only = no
+
+
+# crreate lixnu user, so that perms match up
+adduser --no-create-home --disabled-password --disabled-login --shell /bin/false john_doe
+
+# set samba password
+smbpasswd -a john_doe
+
+# connecting to share
+smbclient -W my_workgroup -U john_doe //10.42.42.42/shared_stuff
