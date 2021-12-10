@@ -9,6 +9,8 @@ for e in "${array[@]}"
 do
   echo "$e"
 done
+# array's elements count:
+${#array[@]}
 
 
 # trap with function
@@ -20,3 +22,6 @@ trap finish EXIT
 
 # direct trap
 trap 'echo 42' EXIT
+
+# read entries into arrat
+readarray -t my_array < file.txt
