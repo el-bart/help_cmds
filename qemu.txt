@@ -1,7 +1,7 @@
 # regain keyboard/mouse from VM: Alt_L + Ctrl_L + G
 
 # create new, empty image:
-qemu-img create -f qcow2 -o size=32G disk.img
+qemu-img create -f qcow2 -o size=32G disk.qcow2
 
 # create CoW image, based on a base reference image (so that base is nerver changed):
 qemu-img create -f qcow2 -b base_disk.qcow2 vm01.qcow2
