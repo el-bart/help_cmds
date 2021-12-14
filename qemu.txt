@@ -4,6 +4,13 @@
 qemu-img create -f qcow2 -o size=32G disk.qcow2
 # add extra space to image:
 qemu-img resize disk.qcow2 +150G
+# resize patition on disk:
+parted /dev/sda
+resizepart 1
+> yes
+> [enter]
+# resizse FS to fit parition:
+resize2fs /dev/sda1
 
 # create CoW image, based on a base reference image (so that base is nerver changed):
 qemu-img create -f qcow2 -b base_disk.qcow2 vm01.qcow2
