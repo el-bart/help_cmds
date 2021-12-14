@@ -118,3 +118,9 @@ device_add usb-host,vendorid=0x1234,productid=0x5678
 
 # tool to share qemu disk images as a network block device (NDB)
 qemu-ndb
+
+# GPU virtualization:
+-device virtio-vga,virgl=on
+# GPU virtualization (the new way - untested; does not work on debian:11)
+-device virtio-vga-gl
+-display gtk,gl=on
