@@ -124,3 +124,10 @@ qemu-ndb
 # GPU virtualization (the new way - untested; does not work on debian:11)
 -device virtio-vga-gl
 -display gtk,gl=on
+
+
+# booting form USB disk image:
+qemu-system-x86_64 \
+  -usb \
+  -device usb-storage,drive=foobar \
+  -drive file=./debian-11.1.0-amd64-netinst.iso,if=none,id=foobar
