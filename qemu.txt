@@ -131,3 +131,11 @@ qemu-system-x86_64 \
   -usb \
   -device usb-storage,drive=foobar \
   -drive file=./debian-11.1.0-amd64-netinst.iso,if=none,id=foobar
+
+# sharing directory between host and guest
+qemu-system-x86_64 \
+  ...
+  -fsdev local,id=shared_dev,path=/path/to/shared/dir,security_model=none -device virtio-9p-pci,fsdev=shared_dev,mount_tag=shared_mount
+  ...
+# on Linux guest (msize is needed for better performance):
+mount -t 9p -o trans=virtio shared_mount /mnt/shared/ -o msize=10485760
