@@ -1,0 +1,4 @@
+# find all files changed after a given date:
+find -newerct "2011-12-13" -o -newermt "2011-12-13"
+# find all files created after a given date
+find -newerBt "2011-12-13"
