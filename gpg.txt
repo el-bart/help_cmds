@@ -17,3 +17,17 @@ gpg --export --armor john@example.com > john_doe.pub
 
 # export given key via ID
 gpg --export --armor ABCDEF0123456789 > john_doe.pub
+
+# genearte new key (interactive)
+gpg --full-generate-key
+
+# export PRIVATE key (can be later on imported into Thunderbird):
+gpg --export-secret-keys --armor ABCDEF0123456789ABCDEF0123456789 > priv.key
+
+# signing others' keys by ID
+gpg --recv-keys ABCDEF0123456789ABCDEF0123456789
+gpg --sign-key  ABCDEF0123456789ABCDEF0123456789
+gpg --send-keys ABCDEF0123456789ABCDEF0123456789
+
+# sign key with a specific local key ("local-user"):
+gpg --sign-key --local-user 0123456789ABCDEF0123456789ABCDEF ABCDEF0123456789ABCDEF0123456789
