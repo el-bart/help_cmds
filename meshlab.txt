@@ -1,0 +1,8 @@
+# trick 1
+1. Cleaning and Repairing > Repair non Manifold edges by removing faces
+2. Remeshing, Simplification and Reconstruction > Close Holes
+
+# trick 2
+1. Filters > Cleaning and Repairing > Select Self Intersecting Faces
+2. hit "delete"
+3.  Remeshing, Simplification and Reconstruction > Close Holes
