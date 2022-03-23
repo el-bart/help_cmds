@@ -2,3 +2,5 @@
 curl --silent --show-error --fail --fail-early http://foo.bar/stuff
 # the same, but shorter:
 curl -sSf --fail-early http://foo.bar/stuff
+# follow all redirections
+curl -L baszerr.eu
