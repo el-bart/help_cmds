@@ -27,3 +27,8 @@ git commit --amend --author="foo bar <foo.bar@stu.ff>" --no-edit
 
 # make script executable (eg. on Windows)
 git update-index --chmod=+x my_script
+
+# get latest tag on a current branch (eg: v1.2.3), with optional info, how far off from the tag the branch is (eg: v1.2.3-42-fabc12cc73):
+git describe --tags
+# get the latest tag on a current branch (eg: v1.2.3, even if it's in a distant past):
+git describe --tags --abbrev=0
