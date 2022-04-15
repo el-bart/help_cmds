@@ -1,0 +1,7 @@
+# server:
+x11vnc -localhost -display :0
+
+# client:
+ssh -L 5900:localhost:5900 some.remote.host
+# client (new terminal):
+xtightvncviewer localhost
