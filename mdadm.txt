@@ -13,3 +13,6 @@ mdadm --grow /dev/md1 --raid-devices=3
 
 # cancel checking of all RAIDs
 /usr/share/mdadm/checkarray -x --all
+
+# explicitly starting (incomplete) array
+mdadm --run /dev/md126
