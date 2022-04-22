@@ -4,6 +4,7 @@
 # -z -> compress
 # -v -> verbose
 # -a -> archive
+# -q -> quiet
 # --delete -> delete files from destination that are not in source
 # --bwlimit=4.2m -> limit I/O to 4.2 MB/s
 # -e 'ssh -i /path/to/another/key' -> add extra parameters to SSH (here: use a different SSH key)
