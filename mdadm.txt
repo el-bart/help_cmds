@@ -15,4 +15,13 @@ mdadm --grow /dev/md1 --raid-devices=3
 /usr/share/mdadm/checkarray -x --all
 
 # explicitly starting (incomplete) array
-mdadm --run /dev/md126
+mdadm --run /dev/md1
+
+# remove disks and destroy array
+for dev in sda1 sdb1 # ...
+do
+  mdadm /dev/md1 --fail /dev/$dev
+  mdadm /dev/md1 --remove /dev/$dev
+  mdadm /dev/md1 --zero-superblock /dev/$dev
+done
+mdadm --stop /dev/md1
