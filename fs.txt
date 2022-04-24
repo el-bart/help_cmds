@@ -1,2 +1,22 @@
 # non-lazy ext4 partition init
 mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0 /dev/xxx42
+
+# resize LUKS-encrypted volume (eg. sdX_crypt):
+1. resize the underlying device (eg. LVM partition resize, mdadm grow, etc.)
+2. cryptsetup luksClose sdX_crypt
+3. cryptsetup luksOpen /dev/sdX sdX_crypt
+
+# change size of btrfs partition (on the fly):
+btrfs filesystem resize +1G /mnt/my_stuff
+# resize btrfs FS to full partition size
+btrfs filesystem resize max /mnt/my_stuff
+
+# resize EXT4 FS, to full size:
+ resize2fs /dev/sda1
+
+# change size of ext4 partition (on the fly if growing, offline if shrinking):
+resize2fs /dev/sda1 23G
+# resize ext4 FS to full partition size (on the fly):
+resize2fs /dev/sda1
+# decrease size of ext4 partition, to be as small as possible (keeping the data; only offline):
+resize2fs -M /dev/sda1
