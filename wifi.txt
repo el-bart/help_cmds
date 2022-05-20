@@ -1,3 +1,8 @@
+# make sure WiFi is enabled
+rfkill list
+rfkill unblock all
+rfkill list
+
 # wpasupplicant:
 apt install wpasupplicant
 wpa_passphrase my_ssid my_password > /etc/wifi/my_ssid.conf
