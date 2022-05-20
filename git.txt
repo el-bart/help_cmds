@@ -32,3 +32,6 @@ git update-index --chmod=+x my_script
 git describe --tags
 # get the latest tag on a current branch (eg: v1.2.3, even if it's in a distant past):
 git describe --tags --abbrev=0
+
+# change path to a given remove repo
+git remote set-url origin git@github.com:foo/bar.git
