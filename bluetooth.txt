@@ -5,6 +5,7 @@ rfkill list
 
 apt install bluez
 bluetoothctl
+# power on
 # agent on
 # default-agent
 # scan on
