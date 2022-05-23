@@ -1,0 +1,8 @@
+#
+# extracting debian archive:
+#
+ar x my.deb
+# and there:
+# debian-binary (txt file with version od deb file format)
+# control.tar.gz (control + {pre,post}* files)
+# data.tar.xz (all installation files)
