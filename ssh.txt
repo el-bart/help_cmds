@@ -7,3 +7,9 @@ ssh-keygen -A
 ssh-keygen -l f /etc/ssh/ssh_host_rsa_key.pub
 # 1-liner for all of them:
 for f in /etc/ssh/ssh_host_*.pub ; do ssh-keygen -l -f "$f" ; done
+
+# copy local SSH pub keys to remote machine, so that these can be used for logging in
+ssh-copy-id user@some.remote.machine
+
+# change a password on SSH private keys
+ssh-keygen -p -f ~/.ssh/id_rsa
