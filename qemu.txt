@@ -139,3 +139,8 @@ qemu-system-x86_64 \
   ...
 # on Linux guest (msize is needed for better performance):
 mount -t 9p -o trans=virtio shared_mount /mnt/shared/ -o msize=10485760
+# on Windows guest (https://virtio-fs.gitlab.io/howto-windows.html):
+1. get WinFsp (http://www.secfs.net/winfsp/rel/)
+2. install it
+3. use path "\\memfs64\share" in explorer
+TODO: https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md
