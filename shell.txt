@@ -1,4 +1,9 @@
-# find all files changed after a given date:
+# find all files changed after a given date
 find -newerct "2011-12-13" -o -newermt "2011-12-13"
 # find all files created after a given date
 find -newerBt "2011-12-13"
+
+# set CPU afinity to CPUs: 0,1,2 and 7
+taskset -a -c 0-2,7 <cmd>
+# set round-robin scheduling of a process, with prio 80 (in 1-99 scale)
+chrt -r 80 <cmd>
