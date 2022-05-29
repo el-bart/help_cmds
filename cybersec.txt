@@ -1,0 +1,2 @@
+# TOTP 2FA code generation from cmd line (sercret_key can be taken from QR code / link when registering auth device):
+oathtool --totp -b <secret_key>
