@@ -31,3 +31,6 @@ rsync --quiet -rPl --delete /path/to/working/efi/mount/  /new/disks/efi/mount/
 rsync --quiet -rPl --delete /path/to/working/boot/mount/ /new/disks/boot/mount/
 grub-install /dev/sda
 update-grub2
+
+# check UUID of all block devices
+blkid
