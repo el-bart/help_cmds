@@ -25,3 +25,9 @@ do
   mdadm /dev/md1 --zero-superblock /dev/$dev
 done
 mdadm --stop /dev/md1
+
+# if broken disk has been replaced, make sure GRUB is installed there (eg. /dev/sda here)
+rsync --quiet -rPl --delete /path/to/working/efi/mount/  /new/disks/efi/mount/
+rsync --quiet -rPl --delete /path/to/working/boot/mount/ /new/disks/boot/mount/
+grub-install /dev/sda
+update-grub2
