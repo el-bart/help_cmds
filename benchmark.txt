@@ -1,0 +1,3 @@
+# check RAM readiong / writing speed
+sysbench memory --memory-block-size=1G --memory-oper=read --threads=1 run
+sysbench memory --memory-block-size=1G --memory-oper=write --threads=1 run
