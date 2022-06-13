@@ -34,3 +34,5 @@ update-grub2
 
 # check UUID of all block devices
 blkid
+# re-read partition tables after low-level changes to disk
+partprobe /dev/sdX
