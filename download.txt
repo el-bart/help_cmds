@@ -6,4 +6,13 @@ curl \
   --silent \
   --show-error \
   --fail \
+  --fail-early \
   "https://foo/bar/net"
+
+# the same, but shorter:
+curl -sSf --fail-early http://foo.bar/stuff
+# follow all redirections
+curl -L baszerr.eu
+
+# common use case to make curl useful in scripts:
+curl -fsSL baszerr.eu
