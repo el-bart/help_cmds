@@ -35,3 +35,19 @@ git describe --tags --abbrev=0
 
 # change path to a given remove repo
 git remote set-url origin git@github.com:foo/bar.git
+
+#
+# code signing
+#
+apt install pinentry-curses
+
+vi ~/.gitconfig
+[user]
+  name = bartek 'basz' szurgot
+  email = git@baszerr.eu
+  signingkey = 123456789ABCDEF
+...
+[commit]
+  gpgsign = true
+
+gpg-agent
