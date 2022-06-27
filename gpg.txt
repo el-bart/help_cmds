@@ -34,3 +34,6 @@ gpg --send-keys ABCDEF0123456789ABCDEF0123456789
 
 # sign key with a specific local key ("local-user"):
 gpg --sign-key --local-user 0123456789ABCDEF0123456789ABCDEF ABCDEF0123456789ABCDEF0123456789
+
+# check if signing is working
+echo test | gpg --clearsign
