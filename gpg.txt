@@ -37,3 +37,5 @@ gpg --sign-key --local-user 0123456789ABCDEF0123456789ABCDEF ABCDEF0123456789ABC
 
 # check if signing is working
 echo test | gpg --clearsign
+# if you get error: "gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device" put this into your profile:
+export GPG_TTY=$(tty)
