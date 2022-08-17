@@ -1,0 +1,14 @@
+#
+# code coverage
+#
+
+# compilation:
+g++ ... --coverage foo.cpp
+
+# gather information:
+lcov --no-external --capture --directory . --output-file out.info
+# generate HTML output from it:
+genhtml -o my_report/ out.info
+
+# use external gcov wrapper:
+lcov --gcov-tool /path/to/different/llvm-gcov ...
