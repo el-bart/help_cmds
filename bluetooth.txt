@@ -1,3 +1,6 @@
+# check interfaces
+hciconfig -a
+
 # make sure BT is enabled
 rfkill list
 rfkill unblock all
