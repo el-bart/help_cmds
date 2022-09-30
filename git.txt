@@ -38,6 +38,8 @@ git remote set-url origin git@github.com:foo/bar.git
 
 # remove tag from a remote repo
 git push origin :refs/tags/<tag_to_be_removed>
+# remove branch from a remote repo
+git push origin :<branch_to_be_removed>
 
 #
 # code signing
