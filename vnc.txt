@@ -5,3 +5,8 @@ x11vnc -localhost -display :0
 ssh -L 5900:localhost:5900 some.remote.host
 # client (new terminal):
 xtightvncviewer localhost
+# in case of issues:
+xtightvncviewer -encodings 'copyrect tight zrle hextile' localhost
+
+# a bit more sophisiticated client:
+xtigervncviewer localhost
