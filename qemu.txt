@@ -82,13 +82,41 @@ brctl addif vmbr0 vm0
 -nic tap,ifname=vm0,script=no,downscript=no,mac=52:54:00:22:22:22
 
 
+# running 4 virtual screens in VM
+-device virtio-vga,max_outputs=4
+# note that '-vga virtio' may NOT be pased, to make this one work
+
+
+#
+# remote connection - VNC
+#
+
 # use VNC for X11
 -vnc 0.0.0.0:4242
+
+# alt:
+-display vnc=:42
+# and then:
+xvncviewer :42
+
+
+#
+# remote connection - VNC
+#
+
+# qemu:
+-spice port=5900,addr=127.0.0.1,disable-ticketing
+# client
+spicy -h localhost -p 5900
 
 
 # serial port can be also exposed via websocket
 -serial websocket:127.0.0.1:4242,server,nowait
 
+
+#
+# qemu monitor
+#
 
 # use monitor via socket
 -monitor unix:./vm.monitor,server,nowait
@@ -115,6 +143,10 @@ device_del stuff
 device_add usb-host,vendorid=0x1234,productid=0x5678
 # TODO: how to delete it?
 
+
+#
+# shared disk
+#
 
 # tool to share qemu disk images as a network block device (NDB)
 qemu-ndb
