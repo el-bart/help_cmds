@@ -41,6 +41,9 @@ git push origin :refs/tags/<tag_to_be_removed>
 # remove branch from a remote repo
 git push origin :<branch_to_be_removed>
 
+# find all branches, that contain a given commit
+git br -a --contains abcdef
+
 #
 # code signing
 #
