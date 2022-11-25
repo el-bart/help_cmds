@@ -1,5 +1,7 @@
 # server:
 x11vnc -localhost -display :0
+# shared server instance, for multiple clients, and allowing reconnections
+x11vnc -shared -forever -localhost -display :0
 
 # client:
 ssh -L 5900:localhost:5900 some.remote.host
@@ -10,3 +12,6 @@ xtightvncviewer -encodings 'copyrect tight zrle hextile' localhost
 
 # a bit more sophisiticated client:
 xtigervncviewer localhost
+
+# one-liner to start VNC server, on remote machine, with prot forwarding and shared session (multiple ppl can see the screen)
+ssh -L 5900:localhost:5900 some.remote.host x11vnc -shared -forever -localhost -display :0
