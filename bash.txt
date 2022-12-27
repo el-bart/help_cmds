@@ -30,3 +30,6 @@ readarray -t my_array < file.txt
 exec 5<>/dev/tcp/127.0.0.1/5555
 head -n 5 <&5
 date >&5
+
+# diff two files' content, but sorted on the fly
+diff -u <(cat foo.txt | sort) <(cat bar.txt | sort)
