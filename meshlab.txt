@@ -5,4 +5,10 @@
 # trick 2
 1. Filters > Cleaning and Repairing > Select Self Intersecting Faces
 2. hit "delete"
-3.  Remeshing, Simplification and Reconstruction > Close Holes
+3. Remeshing, Simplification and Reconstruction > Close Holes
+
+# centering object in coordinate space
+1. Render > Show Axis
+2. Filters > Normals, Curvature and Orientation > Transform: Translace, Center, Set origin
+3. select "Transforamtion" mode "Center on Scene BBox"
+3. "apply"
