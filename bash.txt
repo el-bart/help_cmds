@@ -23,7 +23,7 @@ trap finish EXIT
 # direct trap
 trap 'echo 42' EXIT
 
-# read entries into arrat
+# read entries into array
 readarray -t my_array < file.txt
 
 # I/O to/from sockets
