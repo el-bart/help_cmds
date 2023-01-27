@@ -33,3 +33,7 @@ date >&5
 
 # diff two files' content, but sorted on the fly
 diff -u <(cat foo.txt | sort) <(cat bar.txt | sort)
+
+# unmatched expressions produce empty output
+shopt -s nullglob # set
+shopt -u nullglob # unset
