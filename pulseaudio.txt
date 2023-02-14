@@ -13,3 +13,6 @@ parec -d steam.monitor | oggenc -b 192 -o steam.ogg --raw -
 # make volumes independend
 vi /etc/pulse/daemon.conf
 flat-volumes = no
+
+# add additional fake, output, that sends the same stream to all sinks
+pactl load-module module-combine-sink
