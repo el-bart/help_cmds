@@ -15,4 +15,5 @@ vi /etc/pulse/daemon.conf
 flat-volumes = no
 
 # add additional fake, output, that sends the same stream to all sinks
-pactl load-module module-combine-sink
+pactl   load-module module-combine-sink
+pactl unload-module module-combine-sink
