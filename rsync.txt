@@ -1,6 +1,6 @@
 # -r -> recursive
 # -P -> progress
-# -l -> copy symlinks as aymlinks
+# -l -> copy symlinks as symlinks
 # -z -> compress
 # -v -> verbose
 # -a -> archive
