@@ -37,3 +37,6 @@ diff -u <(cat foo.txt | sort) <(cat bar.txt | sort)
 # unmatched expressions produce empty output
 shopt -s nullglob # set
 shopt -u nullglob # unset
+
+# write stdout of a command to a file and mvoe stderr to stdout of a pipe
+some_cmd 2>&1 > /tmp/content_of_stdout.txt | pipe_will_take_stderr_as_stdout
