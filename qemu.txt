@@ -57,6 +57,10 @@ qemu-system-x86_64 \
   -serial mon:stdio
 
 
+# make all disk changes on temporary files - will be discared when VM is stopped and started again.
+qemu-system-x86_64 ... -snapshot ...
+
+
 # NAT-based networking (works in userspace)
 -nic user,model=virtio-net-pci
 
