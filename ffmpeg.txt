@@ -1,0 +1,19 @@
+# tones of commands here :)
+https://amiaopensource.github.io/ffmprovisr/
+
+# compress (HQ)
+ffmpeg -i "input.avi" -vcodec h264 -acodec mp3 -crf 20 "output.avi"
+
+# concatenate multiple videos
+ffmpeg -f concat -safe 0 -i "file_list.txt" -c copy "output.avi"
+
+# cut selected piece of video
+# -ss is starting position
+# -t is length to cut
+ffmpeg -i "input.avi" -c copy -ss "HH:MM:SS.s" -t "HH:MM:SS.s" "output.avi"
+
+# extract audio from video
+ffmpeg -i "input.avi" -acodec mp3 "output.avi"
+
+# format change
+ffmpeg -i "input.avi" -qscale 1 "output.avi"
