@@ -180,3 +180,8 @@ mount -t 9p -o trans=virtio shared_mount /mnt/shared/ -o msize=10485760
 2. install it
 3. use path "\\memfs64\share" in explorer
 TODO: https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md
+
+
+# changing root password on the qemu image on the fly:
+apt install guestfs-tools
+virt-customize -v -a my_dysk_image.qcow2 --root-password password:secr37
