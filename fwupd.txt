@@ -1,0 +1,13 @@
+https://github.com/fwupd/fwupd
+
+# see which devices are recognized
+fwupdmgr get-devices
+
+# update DB of firmwares
+fwupdmgr refresh
+
+# check which updates are available
+fwupdmgr get-updates
+
+# do the actual update
+fwupdmgr update
