@@ -11,4 +11,4 @@ mkudffs --blocksize=2048 /bigdisk/mybr.udf
 mount /bigdisk/mybr.udf /mnt/test
 ...
 umount /mnt/test
-growisofs -speed=2 -Z /dev/dvd=/bigdisk/mybr.udf
+growisofs -speed=2 -Z /dev/cdrom=/bigdisk/mybr.udf
