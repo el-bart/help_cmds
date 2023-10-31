@@ -22,11 +22,18 @@ apt install pulseaudio-module-bluetooth
 #
 # serial port over BTLE == SPP profile
 #
+
+# find device:
+hcitool scan
+
 # connect to a device:
 rfcomm connect /dev/rfcomm0 01:23:45:67:89:AB
+
 # I/O with it
 picocom -b 9600 /dev/rfcomm0
-# to persist, edit  /etc/bluetooth/rfcomm.conf with:
+
+# to persist, edit:
+# /etc/bluetooth/rfcomm.conf
 rfcomm0 {
   # auto-bind at startup?
   bind no;
