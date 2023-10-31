@@ -18,3 +18,19 @@ bluetoothctl
 
 # to make pulseaudio work
 apt install pulseaudio-module-bluetooth
+
+#
+# serial port over BTLE == SPP profile
+#
+# connect to a device:
+rfcomm connect /dev/rfcomm0 01:23:45:67:89:AB
+# I/O with it
+picocom -b 9600 /dev/rfcomm0
+# to persist, edit  /etc/bluetooth/rfcomm.conf with:
+rfcomm0 {
+  # auto-bind at startup?
+  bind no;
+  device 01:23:45:67:89:AB;
+  channel 3;
+  comment "my serial port";
+}
