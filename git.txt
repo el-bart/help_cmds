@@ -46,6 +46,9 @@ git push origin :<branch_to_be_removed>
 # find all branches, that contain a given commit
 git br -a --contains abcdef
 
+# cleanup remote branches, that have been removed from upstream
+git remote prune origin
+
 #
 # code signing
 #
