@@ -1,6 +1,7 @@
 # -r -> recursive
 # -P -> progress
 # -l -> copy symlinks as symlinks
+# -L -> dereference symlinks when copying
 # -z -> compress
 # -v -> verbose
 # -a -> archive
@@ -13,6 +14,7 @@
 # --include='**/foo/bar/*/config' -> include 'config' from all subdirs of any '/foo/bar/' dir
 # --exclude='**/foo/bar/*/**' -> exclude all elements that are below any subdir of any '/foo/bar/' dir
 
+time rsync -raP           soruce_dir             destination_dir
 time rsync -rzPl          remote:/path/to/stuff/ stuff
 time rsync -rzPl --delete remote:/path/to/stuff/ stuff
 time rsync -avz           remote:/path/to/stuff/ stuff
