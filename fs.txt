@@ -12,7 +12,7 @@ btrfs filesystem resize +1G /mnt/my_stuff
 btrfs filesystem resize max /mnt/my_stuff
 
 # resize EXT4 FS, to full size:
- resize2fs /dev/sda1
+resize2fs /dev/sda1
 
 # change size of ext4 partition (on the fly if growing, offline if shrinking):
 resize2fs /dev/sda1 23G
