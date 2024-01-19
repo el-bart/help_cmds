@@ -31,6 +31,13 @@ rsync --quiet -rPl --delete /path/to/working/efi/mount/  /new/disks/efi/mount/
 rsync --quiet -rPl --delete /path/to/working/boot/mount/ /new/disks/boot/mount/
 grub-install /dev/sda # --uefi-secure-boot
 update-grub2
+# btw: it's worth having a photo of enties in GRUB, before switching disks.
+#      may be usedful for recovery boot, in case grub was not setup for all partitions
+
+# in case array reports:
+# md0 : active (auto-read-only)
+# while being degraded and does not re-sync, mount it in R/W mode, to kick-start the process:
+mdadm --readwrite /dev/md1
 
 # check UUID of all block devices
 blkid
