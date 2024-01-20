@@ -1,6 +1,9 @@
 # check state
 cat /proc/mdstat
 
+# get more info on array
+mdadm --detail /dev/md0
+
 # add disk to RAID
 mdadm --add /dev/md1 /dev/sdc1
 
