@@ -1,0 +1,5 @@
+# enlrage FS to take all available space on the partition
+btrfs filesystem resize max /foo/bar
+
+# cut 500 MiB from /mnt/foobar
+btrfs filesystem resize -500m /mnt/foobar
