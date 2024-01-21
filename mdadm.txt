@@ -11,6 +11,10 @@ mdadm --add /dev/md1 /dev/sdc1
 mdadm --add /dev/md1 /dev/sdc1
 mdadm --grow /dev/md1 --raid-devices=3
 
+# enlarge RAID, after swapping disks/partitions to bigger ones
+mdadm --grow /dev/md1 --size max
+# after this command RAID will need to re-sync newly added space. likely will take a while.
+
 # queue checking of a givne RAID
 /usr/share/mdadm/checkarray --cron /dev/md/x
 
