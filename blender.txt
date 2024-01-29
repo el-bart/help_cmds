@@ -1,0 +1,5 @@
+# fix invalid STL
+0. import STL
+1. "add modifier"
+2. "decimate"
+3. "remesh"
