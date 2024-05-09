@@ -22,6 +22,3 @@ sigrok-cli -d fx2lafw -C D1 --samples 10
 
 # write 1k samples to CSV file
 sigrok-cli -d fx2lafw -C D1 --samples 1000 -o output.csv -O csv
-
-# show timestamps when signal changed value (1ms accuracy)
-sigrok-cli -d fx2lafw -C D1 --config samplerate=24m --time 1000 -O csv | ts '%.s' | uniq -f 1
