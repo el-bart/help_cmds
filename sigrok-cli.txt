@@ -1,0 +1,27 @@
+# all possible values for all options
+sigrok-cli --list-supported
+
+# check for availabel devices
+sigrok-cli --scan
+
+# show device's capabilities
+sigrok-cli -d fx2lafw --show
+
+# log all channels continously
+sigrok-cli -d fx2lafw --continuous
+
+# scan only channel 1 (numberis starts with 0)
+sigrok-cli -d fx2lafw -C D1 --continuous
+
+# capture samples at 1[Mhz]
+sigrok-cli -d fx2lafw -C D1 --continuous --config samplerate=1m
+
+# limits
+sigrok-cli -d fx2lafw -C D1 --time 10 # ms
+sigrok-cli -d fx2lafw -C D1 --samples 10
+
+# write 1k samples to CSV file
+sigrok-cli -d fx2lafw -C D1 --samples 1000 -o output.csv -O csv
+
+# show timestamps when signal changed value (1ms accuracy)
+sigrok-cli -d fx2lafw -C D1 --config samplerate=24m --time 1000 -O csv | ts '%.s' | uniq -f 1
