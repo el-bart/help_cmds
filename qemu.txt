@@ -24,6 +24,10 @@ qemu-img create -f qcow2 -b base_disk.qcow2 vm01.qcow2
 # convert VirtualBox's vdi image to QEMU's qcow2 (-p is for progress display only; -m 1 means using single thread (not to kill I/O)):
 qemu-img convert -p -m 1 -f vdi -O qcow2 in.vdi out.qcow2
 
+# remove unused (sparse) blocks from image, to save space (you did enable trimming on FS, right?)
+qemu-img convert -O qcow2 input.qcow2 output.qcow2
+mv output.qcow2 input.qcow2
+
 
 # start VM with 512MB RAM, 1 CPU, using disk image, w/o GUI
 qemu-system-x86_64 \
