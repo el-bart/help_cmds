@@ -191,3 +191,13 @@ TODO: https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md
 # changing root password on the qemu image on the fly:
 apt install guestfs-tools
 virt-customize -v -a my_dysk_image.qcow2 --root-password password:secr37
+
+
+#
+# misc
+#
+
+# run arm64 image with chroot:
+apt install qemu qemu-user-static binfmt-support
+cp /usr/bin/qemu-aarch64-static /mnt/disk/usr/local/bin/
+chroom /mnt/disk/usr/local/bin/
