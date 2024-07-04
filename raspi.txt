@@ -1,0 +1,6 @@
+# default login
+user: pi
+pass: raspberry
+
+# enable SSH by default
+touch /boot/ssh
