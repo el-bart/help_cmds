@@ -13,3 +13,6 @@ ssh-copy-id user@some.remote.machine
 
 # change a password on SSH private keys
 ssh-keygen -p -f ~/.ssh/id_rsa
+
+# key combination to abort (broken) connection:
+enter~.
