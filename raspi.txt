@@ -2,5 +2,37 @@
 user: pi
 pass: raspberry
 
-# enable SSH by default
+# enable SSH by default (headless)
 touch /boot/ssh
+
+# configure WiFi on RasPi Zero W:
+cat /etc/NetworkManager/system-connections/hellbound24\ 1.nmconnection <<EOF
+[connection]
+id=my favorite network
+uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+type=wifi
+interface-name=wlan0
+
+[wifi]
+mode=infrastructure
+ssid=network_name
+
+[wifi-security]
+auth-alg=open
+key-mgmt=wpa-psk
+psk=topsi_kret_pa$$w0rd
+
+[ipv4]
+method=auto
+
+[ipv6]
+addr-gen-mode=default
+method=auto
+
+[proxy]
+EOF
+
+
+# switch UART between: linux console, serial port and none
+# raspi-config
+> interface options > serial port > (pick preferred combination)
