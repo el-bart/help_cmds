@@ -1,3 +1,7 @@
+#
+# repairing
+#
+
 # trick 1
 1. Cleaning and Repairing > Repair non Manifold edges by removing faces
 2. Remeshing, Simplification and Reconstruction > Close Holes
@@ -7,8 +11,41 @@
 2. hit "delete"
 3. Remeshing, Simplification and Reconstruction > Close Holes
 
+# trick 3
+1. Filters > Cleaning and Repairing > Remove Duplicated Faces
+2. hit "delete"
+3. Remeshing, Simplification and Reconstruction > Close Holes
+
+# trick 4
+1. Filters > Cleaning and Repairing > Remove Duplicated Vertex
+2. hit "delete"
+3. Remeshing, Simplification and Reconstruction > Close Holes
+
+# trick 5 (recalculates mesh, towards target faces number)
+1. Filters > Remeshing, Simplification and Construction > Simplification (Quadratic Edge Collapse Decimation)
+2. select "Planar Simplification" for the best surface result
+
+# trick 6
+1. Filters > Cleaning and Repairing > Merge Close Vertices
+
+# trick 7 (voxelisation)
+1. Filters > Remeshing, Simplification and Construction > Uniform Mesh Resampling
+
+
+#
+# misc
+#
+
 # centering object in coordinate space
 1. Render > Show Axis
 2. Filters > Normals, Curvature and Orientation > Transform: Translace, Center, Set origin
 3. select "Transforamtion" mode "Center on Scene BBox"
 3. "apply"
+
+# check if mesh is watertight
+1. Filters > Quality Measure and Computations > Compute Geometric Measures
+
+#
+# links
+#
+https://formlabs.com/eu/blog/best-stl-file-repair-software-tools/ (some of the tricks are from there)
