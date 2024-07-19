@@ -6,7 +6,7 @@ pass: raspberry
 touch /boot/ssh
 
 # configure WiFi on RasPi Zero W:
-cat /etc/NetworkManager/system-connections/hellbound24\ 1.nmconnection <<EOF
+cat <<EOF > /etc/NetworkManager/system-connections/foobar.nmconnection
 [connection]
 id=my favorite network
 uuid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
