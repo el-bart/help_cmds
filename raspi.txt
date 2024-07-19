@@ -2,8 +2,6 @@
 user: pi
 pass: raspberry
 
-# enable SSH by default (headless)
-touch /boot/ssh
 
 # configure WiFi on RasPi Zero W:
 cat <<EOF > /etc/NetworkManager/system-connections/foobar.nmconnection
@@ -36,3 +34,17 @@ EOF
 # switch UART between: linux console, serial port and none
 # raspi-config
 > interface options > serial port > (pick preferred combination)
+
+
+# enable SSH by default (headless)
+touch /boot/ssh
+
+
+# prohibit passwords via SSH (keys only)
+cat <<EOF > /etc/ssh/sshd_config.d/no_passwords.conf
+PermitRootLogin prohibit-password
+PasswordAuthentication no
+PermitEmptyPasswords no
+KerberosOrLocalPasswd no
+EOF
+systemctl restart ssh
