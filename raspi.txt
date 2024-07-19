@@ -48,3 +48,7 @@ PermitEmptyPasswords no
 KerberosOrLocalPasswd no
 EOF
 systemctl restart ssh
+
+
+# add IP of eth0 to TTY loggin screen
+echo '\4{eth0}' >> /etc/issue
