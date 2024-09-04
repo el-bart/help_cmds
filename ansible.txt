@@ -1,0 +1,2 @@
+# install 1 package on all machines
+ansible -m apt -a "name=foobar state=present" all
