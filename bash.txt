@@ -44,3 +44,6 @@ some_cmd 2>&1 > /tmp/content_of_stdout.txt | pipe_will_take_stderr_as_stdout
 # prefix lines with timestamps (apt install moreutils)
 some --long --command | ts
 some --long --command | ts '%Y-%m-%d %H:%M:%.S'
+
+# in-place diff 2 files, process by a sort command
+vimdiff <(sort foo.txt) <(sort bar.txt)
