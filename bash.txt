@@ -52,12 +52,8 @@ vimdiff <(sort foo.txt) <(sort bar.txt)
 set -eu -o pipefail
 app=$(basename "$0")
 on_error() {
-  ret=$?
-  cmd=$BASH_COMMAND
-  line=$BASH_LINENO
-  echo "!! $app:$line failed with $ret exit code on:" >&2
-  echo "  $cmd" >&2
-  exit "$ret"
+  echo "ERROR: $0:$BASH_LINENO failed with $? exit code on:" >&2
+  echo "  $BASH_COMMAND" >&2
 }
 trap on_error ERR
 # rest of the script goes here...
