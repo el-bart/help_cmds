@@ -9,3 +9,7 @@ openssl pkcs12 -export -out host.pfx -inkey host.key -in host.crt
 
 # get certificate(chain) of a remote service
 openssl s_client -connect "some.test.hostname:443" < /dev/null
+
+# decoding CRLs
+openssl crl -inform PEM -text -noout -in crl.pem
+openssl crl -inform DER -text -noout -in crl.crl
