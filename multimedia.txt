@@ -11,3 +11,6 @@ ffmpeg -i in.avi -ss $((4*60+54)) -t $((5*60+10)) -b:v $((800*1024)) -r 30 -qsca
 ffmpeg -i in.mp4 -vcodec h264 -acodec mp3 -crf 20 out.avi
 
 icedax -D /dev/dvd -B -x
+
+# list all camera devices:
+v4l2-ctl --list-devices
