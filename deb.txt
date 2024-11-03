@@ -6,3 +6,6 @@ ar x my.deb
 # debian-binary (txt file with version od deb file format)
 # control.tar.gz (control + {pre,post}* files)
 # data.tar.xz (all installation files)
+
+# list all pacakges by their installed size
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
