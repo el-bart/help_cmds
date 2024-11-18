@@ -1,0 +1,3 @@
+# QR code content for 'foobar' entry with a secret code 'XXXXXXXXXXXXXXXXXXXXXXXX'
+# (note: do not use byte-order-mark (BOM) character when generating QR code!)
+otpauth://totp/foobar?secret=XXXXXXXXXXXXXXXXXXXXXXXX
