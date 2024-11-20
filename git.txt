@@ -64,3 +64,6 @@ vi ~/.gitconfig
   gpgsign = true
 
 gpg-agent
+
+# get nice abbreviation from git version, eg.: v0.2-210-g3a85b56696-dirty
+git describe --always --abbrev=10 --dirty
