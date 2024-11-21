@@ -22,3 +22,7 @@ thread apply 42 backtrace
 thread apply all backtrace
 
 set pagination off
+
+# setting conditional breakpoint
+b # set breakpoint
+condtion 13 i > 42 # at breakpoint number 13 break if i>42
