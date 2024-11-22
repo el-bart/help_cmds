@@ -1,2 +1,5 @@
 # print all lines after a pattern
 sed '0,/REGEX/d'
+
+# print lines between START and STOP patterns
+sed '/START/,/STOP/{//!d}'
