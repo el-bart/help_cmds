@@ -26,3 +26,6 @@ set pagination off
 # setting conditional breakpoint
 b # set breakpoint
 condtion 13 i > 42 # at breakpoint number 13 break if i>42
+
+# continue program, but do not block cmd line
+continue &
