@@ -52,3 +52,19 @@ systemctl restart ssh
 
 # add IP of eth0 to TTY loggin screen
 echo '\4{eth0}' >> /etc/issue
+
+
+# I2C usage
+(enable I2C in `raspi-config` first!)
+
+## scan bus for devices
+i2cdetect -y 1
+
+## read entire from EEPROM
+i2cdump -y 1 0x50
+
+## read byte 0x42 from EEPROM (0x50 address)
+i2cget -y 1 0x50 0x42
+
+## set byte 0x42 to 0x12 (EEPRIN is at 0x50 address)
+i2cset -y 1 0x50 0x42 0x12
