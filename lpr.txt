@@ -1,1 +1,5 @@
-lpr -P hp_hell -o InputSlot=Default -o Resolution=300dpi -o PageSize=A4
+# print with custom paper / DPI and from a given input slot
+lpr -o InputSlot=Default -o Resolution=300dpi -o PageSize=A4 file.pdf
+
+# print in gray scale
+lpr -o ColorModel=KGray file.pdf
