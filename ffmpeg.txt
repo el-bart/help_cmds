@@ -17,3 +17,6 @@ ffmpeg -i "input.avi" -acodec mp3 "output.avi"
 
 # format change
 ffmpeg -i "input.avi" -qscale 1 "output.avi"
+
+# get 1 frame per second as an image
+ffmpeg -i input.avi -vf "fps=1" 'frame%06d.jpg'
