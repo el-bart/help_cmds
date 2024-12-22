@@ -1,0 +1,36 @@
+# getting live preview
+rtl_433
+# witj JSON output
+rtl_433 -F JSON
+
+# GUI for visualization / waterfall plot
+apt install cubicsdr
+CubicSDR
+# alt:
+SDR++
+
+
+### UNSORTED (WIP)
+
+# random
+apt install rtl-sdr
+apt install gnuradio
+
+# Chris
+
+gqrx-sdr - Software defined radio receiver
+multimon-ng - digital radio transmission decoder
+
+https://konektor5000.pl/index.php?p4657,yard-stick-one-great-scott-gadgets-nadajnik-odbiornik-sdr-3-pasmowy-np-do-radio-hackingu
+https://greatscottgadgets.com/yardstickone/
+
+https://www.gqrx.dk/
+
+```
+git clone https://github.com/osmocom/rtl-sdr.git
+cd rtl-sdr
+mkdir build && cd $_
+cmake -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON ..
+make
+sudo make install
+```
