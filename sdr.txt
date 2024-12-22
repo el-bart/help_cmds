@@ -20,6 +20,13 @@ projects / libs:
 usually running ~868.9MHz
 
 
+# analog PMR
+* around 446.0MHz - 446.2MHz
+* 12.5kHz channel spacing
+* (NB)FM modulation
+* ~6kHz bandwidth is enough
+
+
 ### UNSORTED (WIP)
 
 # random
