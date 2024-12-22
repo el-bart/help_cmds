@@ -2,12 +2,22 @@
 rtl_433
 # witj JSON output
 rtl_433 -F JSON
+# ^^ 433MHz is where typical house-hold thermometers transmit
 
 # GUI for visualization / waterfall plot
 apt install cubicsdr
 CubicSDR
 # alt:
 SDR++
+
+
+# (W)M-bus (electricity / water / gas meters)
+step by step instructions: https://dev.to/ordigital/zdalny-odczyt-licznika-amiplus-z-hanplus-m-bus-15o1
+projects / libs:
+* https://github.com/xaelsouth/rtl-wmbus
+* https://github.com/wmbusmeters/wmbusmeters
+
+usually running ~868.9MHz
 
 
 ### UNSORTED (WIP)
