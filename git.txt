@@ -19,6 +19,12 @@ git filter-branch -f --prune-empty --tree-filter 'find -type f -a ! \( -path "./
 # remove element (file/dir) from whole history
 git filter-branch -f --prune-empty --index-filter 'git rm --cached --ignore-unmatch unrelevant* insecure*.txt *.unneeded'
 
+# remove anything but given dirs from repo's history using filter-repo (preferred over filter-branch)
+git filter-repo --path foo/xyz --path bar/abc
+
+# remove element (file/dir) from whole history using filter-repo (preferred over filter-branch)
+git filter-repo --path foo/xyz --path bar/abc --invert-paths
+
 # faster alternative for filter-branch (now recommented by git project):
 https://github.com/newren/git-filter-repo/
 
