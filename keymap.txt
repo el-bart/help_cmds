@@ -9,3 +9,6 @@ XKBLAYOUT="us"
 
 dpkg-reconfigure console-data
 dpkg-reconfigure keyboard-configuration
+
+# pick language, etc. interactively
+dpkg-reconfigure locales
