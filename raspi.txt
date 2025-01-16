@@ -68,3 +68,17 @@ i2cget -y 1 0x50 0x42
 
 ## set byte 0x42 to 0x12 (EEPRIN is at 0x50 address)
 i2cset -y 1 0x50 0x42 0x12
+
+
+# ensure HDMI comes up even if monitor was not plugged in on boot
+# to /boot/firmware/config.txt add these lines and reboot:
+
+# allow to connect monitor at runtime
+hdmi_force_hotplug=1
+# compatibility mode
+hdmi_safe=1
+# 1080p @ 60Hz
+hdmi_group=1
+hdmi_mode=16
+# force treating HDMI as DVI (this makes all the difference, apparently)
+hdmi_drive=2
