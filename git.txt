@@ -76,3 +76,6 @@ git describe --always --abbrev=10 --dirty
 
 # configure git to auto-update submodules when checking out differetn branches
 git config --global submodule.recurse true
+
+# diff and ignore whitespace changes
+git diff -b
