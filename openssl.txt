@@ -13,3 +13,8 @@ openssl s_client -connect "some.test.hostname:443" < /dev/null
 # decoding CRLs
 openssl crl -inform PEM -text -noout -in crl.pem
 openssl crl -inform DER -text -noout -in crl.crl
+
+# encrypt file with AES-256 in CTR mode (allows for parallel encryption);
+openssl enc -aes-256-ctr -pbkdf2 -salt --pass file:pass -in data.bin -out data.bin.enc
+# decrypt the above
+openssl enc -d -aes-256-ctr -pbkdf2 --pass file:pass -in data.bin.enc -out data.bin
