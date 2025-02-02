@@ -1,0 +1,20 @@
+# just pack
+tar cvf out.tar file1 dir1/ dir2/ ...
+
+# pack and compress with gzip
+tar czvf out.tar.gz file1 dir1/ dir2/ ...
+
+# pack and compress with bzip2
+tar cjvf out.tar.bz2 file1 dir1/ dir2/ ...
+
+# got to 'in_dir' before executing anything
+tar -C in_dir/ cvf out.tar file1 dir1/ dir2/ ...
+
+# read files and arguments from file
+tar -T args_and_files.txt cvf out.tar file1 dir1/ dir2/ ...
+
+# read ONLY files from file
+tar --verbatim-files-from args_and_files.txt cvf out.tar file1 dir1/ dir2/ ...
+
+# output tar archive on stdout
+tar cvf - dir1/ dir2/
