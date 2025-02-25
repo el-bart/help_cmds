@@ -194,6 +194,39 @@ virt-customize -v -a my_dysk_image.qcow2 --root-password password:secr37
 
 
 #
+# snapshots
+#
+# all commands are to be ran using monitor
+
+# save state as tag
+savevm some_label
+
+# restore state from tag
+loadvm some_label
+
+# list tags
+info snapshots
+
+# delete tag
+delvm some_label
+
+
+#
+# pause / resume
+#
+
+# pause VM
+stop
+# or just:
+s
+
+# resume paused VM
+cont
+# or just:
+c
+
+
+#
 # misc
 #
 
