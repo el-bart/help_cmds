@@ -159,7 +159,18 @@ device_add usb-host,vendorid=0x1234,productid=0x5678
 #
 
 # tool to share qemu disk images as a network block device (NDB)
-qemu-ndb
+qemu-nbd
+
+# mounting qcow2 as a local disk:
+modprobe nbd
+qemu-nbd --connect=/dev/nbd0 disk.qcow2
+fdisk /dev/nbd0 -l # list partitions
+mkdir d1
+mount /dev/nbd0p1 /mnt/qcow2
+# ...
+umount /mnt/qcow2
+qemu-nbd --disconnect /dev/nbd0
+
 
 # GPU virtualization:
 -device virtio-vga,virgl=on
