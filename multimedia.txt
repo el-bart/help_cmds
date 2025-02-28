@@ -14,3 +14,6 @@ icedax -D /dev/dvd -B -x
 
 # list all camera devices:
 v4l2-ctl --list-devices
+
+# show all possible formats / resolutions / framerates for a give device:
+v4l2-ctl -d /dev/video0 --list-formats-ext
