@@ -1,0 +1,5 @@
+# make console do not beep on tab
+rmmod pcspkr
+bind 'set bell-style none'
+# in /etc/inputrc do:
+set bell-style none
