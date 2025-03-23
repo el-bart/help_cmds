@@ -1,0 +1,3 @@
+# add 32-bit architecture to a supported list
+dpkg --add-architecture i386
+apt-get update
