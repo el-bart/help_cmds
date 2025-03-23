@@ -251,3 +251,11 @@ c
 apt install qemu qemu-user-static binfmt-support
 cp /usr/bin/qemu-aarch64-static /mnt/disk/usr/local/bin/
 chroom /mnt/disk/usr/local/bin/
+
+
+# forwarding USB device to guest
+[...] -usb [...] -device usb-host,hostdevice=/dev/bus/usb/<bus>/<device> [...]
+# for bus/device IDs check:
+tree /dev/bus/usb/
+# or (for web cams):
+lsusb | grep -i camera
