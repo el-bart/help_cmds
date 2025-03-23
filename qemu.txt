@@ -73,6 +73,12 @@ qemu-system-x86_64 ... -snapshot ...
 # network device that will additionally forward port to a guest
 -nic user,model=virtio-net-pci,hostfwd=tcp:127.0.0.1:1234-:22
 
+# restrict network to only allow inbound connections to VM
+-netdev user,id=mynet0,restrict=yes
+
+# disable network
+-nic none
+
 # Pulseaudio-based sound I/O
 -audiodev pa,id=snd0 -device AC97,audiodev=snd0
 
