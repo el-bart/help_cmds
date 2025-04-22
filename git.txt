@@ -79,3 +79,11 @@ git config --global submodule.recurse true
 
 # diff and ignore whitespace changes
 git diff -b
+
+# grep version hisotry for a given pattern
+# find by string:
+git log -S "string"
+# find by regex:
+git log -p -G "regex"
+# grep by regex in a given commits (not only changes)
+git grep "regex" <hash1> <hash2> ...
