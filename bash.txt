@@ -57,3 +57,16 @@ on_error() {
 }
 trap on_error ERR
 # rest of the script goes here...
+
+
+# display variable that name is in a 'ptr' variable
+v1=one
+v2=two
+ptr=v2
+echo "$ptr"    # >> v2
+echo "${!ptr}" # >> two
+
+# show all indexes of an array
+a=(one two three)
+echo "${!a[@]}" # >> 0 1 2 (as 3 quoted args)
+echo "${!a[*]}" # >> 0 1 2 (as 1 string)
