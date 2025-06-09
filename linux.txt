@@ -1,0 +1,16 @@
+# Magic SysRq feature (emeregecy, but quasi-safe reboot of linux)
+1. alt+SysReq (aka: alt+printscreen)
+2. R -> E -> I -> S -> U -> B
+  where:
+    R - Switch keyboard from raw mode to ASCII mode (unraw)
+    E - Send SIGTERM to all processes (except init)
+    I - Send SIGKILL to all processes (except init)
+    S - Sync all mounted filesystems (flush data to disk)
+    U - Remount all filesystems as read-only
+    B - Reboot the system
+
+# check Magic SysRq feature status:
+cat /proc/sys/kernel/sysrq
+#  0 == disabled
+#  1 == enabled
+# >1 == some features enabled while others are not
