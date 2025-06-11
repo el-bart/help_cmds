@@ -82,3 +82,7 @@ hdmi_group=1
 hdmi_mode=16
 # force treating HDMI as DVI (this makes all the difference, apparently)
 hdmi_drive=2
+
+
+# show CPU temperature
+vcgencmd measure_temp
