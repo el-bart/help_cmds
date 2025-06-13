@@ -20,3 +20,6 @@ ffmpeg -i "input.avi" -qscale 1 "output.avi"
 
 # get 1 frame per second as an image
 ffmpeg -i input.avi -qscale 1 -vf "fps=1" 'frame%06d.jpg'
+
+# record raw mjpeg format stream from the camera in 1k@30fps
+ffmpeg -f v4l2 -input_format mjpeg -video_size 1920x1080 -framerate 30 -i /dev/video0 -c:v copy output.mkv
