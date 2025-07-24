@@ -26,7 +26,10 @@ trap 'echo 42' EXIT
 # read entries into array
 readarray -t my_array < file.txt
 
-# I/O to/from sockets
+# send stdout and stderr of the remaining part of the script to the "out.log" file
+exec > "out.log" 2>&1
+
+# I/O to/from sockets (fd=5)
 exec 5<>/dev/tcp/127.0.0.1/5555
 head -n 5 <&5
 date >&5
