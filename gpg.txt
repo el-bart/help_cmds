@@ -19,7 +19,9 @@ gpg --export --armor john@example.com > john_doe.pub
 gpg --export --armor ABCDEF0123456789 > john_doe.pub
 
 # convert ASCII key to binary format
-gpg --dearmor < in.gpg > out.gpg
+gpg --dearmor < in.asc > out.gpg
+# convert binary key to ASCII format
+gpg --enarmor < in.gpg > out.asc
 
 # genearte new key (interactive)
 gpg --full-generate-key
