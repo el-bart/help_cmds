@@ -14,3 +14,10 @@ apt pruge '~c'
 
 # don't mount /tmp/ in RAM disk (default since debian:13)
 systemctl mask tmp.mount
+
+# apt install ...
+# usefull packages:
+apt-listchanges
+apt-file
+debian-security-support  # provides: check-support-status
+fwupd # provies: fwupdmgr
