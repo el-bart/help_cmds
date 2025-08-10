@@ -6,3 +6,6 @@ apt-get update
 apt list '~o'
 # remove obsolete packages
 apt purge '~o'
+
+# don't mount /tmp/ in RAM disk (default since debian:13)
+systemctl mask tmp.mount
