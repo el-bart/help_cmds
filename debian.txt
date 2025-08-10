@@ -20,4 +20,5 @@ systemctl mask tmp.mount
 apt-listchanges
 apt-file
 debian-security-support  # provides: check-support-status
-fwupd # provies: fwupdmgr
+fwupd # provides: fwupdmgr
+smartmontools # provides: smartctl
