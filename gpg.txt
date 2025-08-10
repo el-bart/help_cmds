@@ -47,3 +47,6 @@ export GPG_TTY=$(tty)
 
 # check if signing is working
 echo test | gpg --clearsign
+
+# sign some string and ensure passcode is entered via cmd line (if needed)
+echo -n 'sth to be signed ' | gpg --sign --armor --pinentry-mode=loopback
