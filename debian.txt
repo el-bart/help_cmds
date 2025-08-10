@@ -1,3 +1,8 @@
 # add 32-bit architecture to a supported list
 dpkg --add-architecture i386
 apt-get update
+
+# list obsolete packjages
+apt list '~o'
+# remove obsolete packages
+apt purge '~o'
