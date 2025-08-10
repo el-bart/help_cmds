@@ -86,3 +86,12 @@ hdmi_drive=2
 
 # show CPU temperature
 vcgencmd measure_temp
+
+
+# check which HW version is used:
+cat /proc/device-tree/model
+# (note: RasPi >= 3 is 64-bit)
+# e.g.:
+# Raspberry Pi Model B Rev 2
+# Raspberry Pi 2 Model B Rev 1.1
+# Raspberry Pi 4 Model B Rev 1.4
