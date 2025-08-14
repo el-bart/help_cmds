@@ -22,3 +22,6 @@ apt-file
 debian-security-support  # provides: check-support-status
 fwupd # provides: fwupdmgr
 smartmontools # provides: smartctl
+
+# list packages from outside of the core distro
+apt list '?narrow(?installed, ?not(?origin(Debian)))'
