@@ -1,3 +1,14 @@
+#
+# linux schedulers
+# (priorities are given as: low..high
+#
+SCHED_FIFO  (RT: pri: 99..1)
+SCHED_RR    (RT: pri: 99..1)
+SCHED_OTHER (CFS(Completely Fair Scheduler): pri: 19..-20)
+SCHED_BATCH (background: pri: 0)
+SCHED_IDLE  (background: pri: 0)
+
+
 # set CPU afinity to CPUs: 0,1,2 and 7
 taskset -a -c 0-2,7 <cmd>
 
