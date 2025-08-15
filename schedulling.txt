@@ -1,0 +1,10 @@
+# set CPU afinity to CPUs: 0,1,2 and 7
+taskset -a -c 0-2,7 <cmd>
+
+# set round-robin scheduling of a process, with prio 80 (in 1-99 scale)
+chrt -r 80 <cmd>
+
+# set FIFO scheduler with priority of 1 for PID=1234
+chrt -f -p 1 1234
+# set FIFO scheduler with priority of 1 for PID=1234 and all its subthreads
+chrt -a -f -p 1 1234
