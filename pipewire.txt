@@ -1,0 +1,26 @@
+# if audio is choppy, increase quantum (2k -> 8k):
+pw-metadata -n settings 0 clock.force-quantum $((8*1024))
+
+# make this persist:
+mkdir -p /etc/pipewire/pipewire.conf.d
+cat > /etc/pipewire/pipewire.conf.d/no_choppy_audio.conf <<EOF
+context.properties = {
+   # default is 2k, but seems to be choppy every now and then...
+   clock.force-quantum = 8192
+   default.clock.quantum = 8192
+   default.clock.min-quantum = 8192
+}
+EOF
+
+# preview what's on in audio world
+pw-top
+
+# install all compatibility plugins + BTLE support
+apt install \
+  pipewire \
+  pipewire-audio-client-libraries \
+  pipewire-alsa \
+  pipewire-pulse \
+  pipewire-jack \
+  pipewire-v4l2 \
+  libspa-0.2-bluetooth
