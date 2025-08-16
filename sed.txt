@@ -9,3 +9,6 @@ sed -n '/START/,/STOP/p'
 
 # print lines between START and STOP patterns (w/o START and STOP)
 sed -n '/START/,/STOP/{//!p}'
+
+# delete lines matching a pattern
+sed '/REGEX/d'
