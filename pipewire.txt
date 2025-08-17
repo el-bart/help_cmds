@@ -1,5 +1,9 @@
 # if audio is choppy, increase quantum (2k -> 8k ... at the cost of latency):
 pw-metadata -n settings 0 clock.force-quantum $((8*1024))
+# and / or:
+systemctl --user stop    filter-chain
+systemctl --user disable filter-chain
+systemctl --user mask    filter-chain
 
 # preview what's on in audio world
 pw-top
