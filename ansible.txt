@@ -3,3 +3,6 @@ ansible -m apt -a "name=foobar state=present" all
 
 # check ansible variable 'ansible_architecture' on remote host
 ansible -m setup -a 'filter=ansible_architecture'
+
+# run 1 role only
+ansible -m import_role -a name=somerole somehost
