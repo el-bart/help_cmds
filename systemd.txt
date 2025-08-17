@@ -1,3 +1,10 @@
 # systemd[1]: start request repeated too quickly for foobar.service
 systemctl reset-failed foobar.service
 systemctl restart      foobar.service
+
+# list user units, etc.
+systemctl --user
+# list user services
+systemctl --user list-unit-files --type=service
+# stop user service
+systemctl --user stop foo-bar
