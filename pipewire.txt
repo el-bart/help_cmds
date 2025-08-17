@@ -1,16 +1,5 @@
-# if audio is choppy, increase quantum (2k -> 8k):
+# if audio is choppy, increase quantum (2k -> 8k ... at the cost of latency):
 pw-metadata -n settings 0 clock.force-quantum $((8*1024))
-
-# make this persist:
-mkdir -p /etc/pipewire/pipewire.conf.d
-cat > /etc/pipewire/pipewire.conf.d/no_choppy_audio.conf <<EOF
-context.properties = {
-   # default is 2k, but seems to be choppy every now and then...
-   clock.force-quantum = 8192
-   default.clock.quantum = 8192
-   default.clock.min-quantum = 8192
-}
-EOF
 
 # preview what's on in audio world
 pw-top
@@ -24,3 +13,13 @@ apt install \
   pipewire-jack \
   pipewire-v4l2 \
   libspa-0.2-bluetooth
+
+# restart config (note: needs to be ran as user!)
+systemctl --user restart pipewire pipewire-pulse wireplumber
+
+# disabled auto-switch to BTLS by default (save in ~/.local/state/wireplumber/)
+wpctl settings        bluetooth.autoswitch-to-headset-profile false
+wpctl settings --save bluetooth.autoswitch-to-headset-profile false
+
+# show settings with wireplumber
+wpctl settings
