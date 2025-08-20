@@ -8,3 +8,6 @@ systemctl --user
 systemctl --user list-unit-files --type=service
 # stop user service
 systemctl --user stop foo-bar
+
+# restart OS w/o rebooting PC
+systemctl soft-reboot
