@@ -41,3 +41,6 @@ rfcomm0 {
   channel 3;
   comment "my serial port";
 }
+
+# check power level of the headeset
+upower --dump
