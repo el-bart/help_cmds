@@ -27,3 +27,6 @@ wpctl settings --save bluetooth.autoswitch-to-headset-profile false
 
 # show settings with wireplumber
 wpctl settings
+
+# graphical tool for connecting inputs and outputs
+qpwgraph
