@@ -1,0 +1,31 @@
+G0 Xnnn Ynnn Znnn - move to X/Y/Z
+G0 Xnnn Ynnn Znnn Fnn - move to X/Y/Z with a speed of F
+G0 Xnnn Ynnn Znnn Fnn Ennn - move to X/Y/Z with a speed of F and extruding E
+
+G1 - ~the same as G0
+
+G28 - home all axis
+G28 X Y - home X Y only
+G28 Z - home Z only
+
+G90 - use absolute positioning
+G91 - use relative positioning
+
+M106 S255 - fan 0 speed to 100%
+
+M104 S123 - set extruder temperature to 123°C - do not wait
+M109 S123 - set extruder temperature to 123°C and wait
+
+M112 - emergency stop
+
+M114 - report curent position
+
+M116 - wait for all temperatures to meet presets
+
+M117 hello world - display message on the printer screen
+M118 hello world - display message on the printer screen and on host controller program
+
+M119 - get endstops status
+
+M140 S70 - set bed temperature to 70°C - do not wait
+M190 S70 - set bed temperature to 70°C and wait
