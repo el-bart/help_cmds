@@ -8,6 +8,8 @@ G28 - home all axis
 G28 X Y - home X Y only
 G28 Z - home Z only
 
+G32 - probe Z and calculate Z plane
+
 G90 - use absolute positioning
 G91 - use relative positioning
 
