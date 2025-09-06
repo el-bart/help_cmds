@@ -11,6 +11,9 @@ ffmpeg -f concat -safe 0 -i "file_list.txt" -c copy "output.avi"
 # -ss is starting position
 # -t is length to cut
 ffmpeg -i "input.avi" -c copy -ss "HH:MM:SS.s" -t "HH:MM:SS.s" "output.avi"
+# -ss start position
+# -to start position
+ffmpeg -i "input.avi" -c copy -ss "HH:MM:SS.s" -to "HH:MM:SS.s" "output.avi"
 
 # extract audio from video
 ffmpeg -i "input.avi" -acodec mp3 "output.avi"
