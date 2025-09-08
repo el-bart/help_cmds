@@ -15,6 +15,9 @@ ffmpeg -i "input.avi" -c copy -ss "HH:MM:SS.s" -t "HH:MM:SS.s" "output.avi"
 # -to start position
 ffmpeg -i "input.avi" -c copy -ss "HH:MM:SS.s" -to "HH:MM:SS.s" "output.avi"
 
+# in order to avoid missing key frames, do both recoding and cutting in 1 go + keep "-ss" before "-i"!
+ffmpeg -ss HH:MM:SS.s -to HH:MM:SS.s -i input.mkv -vcodec h264 -acodec mp3 -crf 20 output.avi
+
 # extract audio from video
 ffmpeg -i "input.avi" -acodec mp3 "output.avi"
 
