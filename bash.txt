@@ -73,3 +73,6 @@ echo "${!ptr}" # >> two
 a=(one two three)
 echo "${!a[@]}" # >> 0 1 2 (as 3 quoted args)
 echo "${!a[*]}" # >> 0 1 2 (as 1 string)
+
+# get path relative to other path
+realpath --relative-to=$PWD $PWD/a/b/c/xyz   # returns: a/b/c/xyz
