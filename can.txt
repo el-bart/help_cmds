@@ -31,6 +31,8 @@ ip link set dev can0 down
 
 # send CAN frame ID 123, of 8  bytes, defined in hex:
 cansend can0 123#0011223344556677
+# send CAN FD frame ID 123, of 8  bytes, defined in hex, and CAN flags=0:
+cansend can0 123##09988776655443322
 
 # monitor bus:
 candump can0
