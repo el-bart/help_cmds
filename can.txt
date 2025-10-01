@@ -38,3 +38,7 @@ candump can0
 
 # check status
 ip -details link show can0
+
+
+# setting CAN FD, at 500kbps
+ip link set can0 type can bitrate 500000 fd on dbitrate 2000000
