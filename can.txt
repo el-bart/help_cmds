@@ -1,0 +1,40 @@
+# tools
+apt install can-utils
+
+# map /dev/ttyACM0 to can0 interface
+slcand -o -c -f -s6 /dev/ttyACM0 can0
+# the same, but using faster serial interface rates, HW flow control and staying foreground
+slcand -o -c -f -s6 -S 3000000 -t hw -F /dev/ttyACM0 can0
+
+# alt:
+slcan_attach -f -s6 -o -n can0 /dev/ttyACM0
+
+# -s6 is 500Kbit/s
+# <speed>   <bitrate>
+#       0     10 Kbit/s
+#       1     20 Kbit/s
+#       2     50 Kbit/s
+#       3    100 Kbit/s
+#       4    125 Kbit/s
+#       5    250 Kbit/s
+#       6    500 Kbit/s
+#       7    800 Kbit/s
+#       8   1000 Kbit/s
+
+# being the interface up
+ip link set dev can0 up
+# and down
+ip link set dev can0 down
+
+# to end session kill corresponding slcand process
+
+
+# send CAN frame ID 123, of 8  bytes, defined in hex:
+cansend can0 123#0011223344556677
+
+# monitor bus:
+candump can0
+
+
+# check status
+ip -details link show can0
