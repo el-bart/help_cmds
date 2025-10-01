@@ -26,3 +26,6 @@ smartmontools # provides: smartctl
 
 # list packages from outside of the core distro
 apt list '?narrow(?installed, ?not(?origin(Debian)))'
+
+# install package w/o recommended part
+apt install --no-install-recommends some-package
