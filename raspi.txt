@@ -111,4 +111,4 @@ rpicam-jpeg -o x.jpg
 rpicam-vid -t 0 -n --inline --listen  -o tcp://0.0.0.0:1234
 
 # receiving stream
-ffplay tcp://my-camera-address:1234 -vf "setpts=N/30" -fflags nobuffer -flags low_delay -framedrop
+ffplay tcp://my-camera-address:1234 -fflags nobuffer -flags low_delay -framedrop
