@@ -106,3 +106,9 @@ rpicam-vid --mode 1920:1080:8:U -o x.mkv
 
 # capture image into a file
 rpicam-jpeg -o x.jpg
+
+# streaming camera video
+rpicam-vid -t 0 -n --inline --listen  -o tcp://0.0.0.0:1234
+
+# receiving stream
+ffplay tcp://my-camera-address:1234 -vf "setpts=N/30" -fflags nobuffer -flags low_delay -framedrop
