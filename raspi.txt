@@ -101,6 +101,12 @@ cat /proc/device-tree/model
 # RasPi CSI camera
 #
 
+# install all deps (e.g. libav)
+apt install rpicam-apps
+
+# list cameras
+rpicam-vid  --list-cameras
+
 # record video (1k)
 rpicam-vid --mode 1920:1080:8:U -o x.mkv
 
@@ -112,3 +118,9 @@ rpicam-vid -t 0 -n --inline --listen  -o tcp://0.0.0.0:1234
 
 # receiving stream
 ffplay tcp://my-camera-address:1234 -fflags nobuffer -flags low_delay -framedrop
+
+# streaming using MPEG-TS
+rpicam-vid -t 0 -n --codec libav --libav-format mpegts -o 'tcp://0.0.0.0:1234?listen=1'
+
+# recodinf MPEG-TS stream
+ffmpeg -i tcp://my-camera-address:1234 -c copy output.ts
