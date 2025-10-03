@@ -11,3 +11,8 @@ systemctl --user stop foo-bar
 
 # restart OS w/o rebooting PC
 systemctl soft-reboot
+
+# overriding foobar service
+systemctl edit foobar
+# will edit:
+/etc/systemd/system/foobar.service.d/override.conf
