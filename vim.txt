@@ -1,0 +1,16 @@
+#
+# folding
+#
+
+za - toggle current fold
+zc - colapse current
+zv - unfold enough for a current line
+
+zR - expand all
+zM - collapse all
+
+zr - open 1 level
+zm - close 1 level
+
+zo - open current
+ZO - recursive open current
