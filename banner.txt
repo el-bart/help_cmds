@@ -1,0 +1,32 @@
+#
+# BANNER
+#
+
+# display in big fonts
+banner "text"
+
+
+#
+# FIGLET
+#
+
+# default print-nice
+figlet -t -f big "text"
+
+# list figlet fonts
+ls /usr/share/figlet/*.flf
+
+# sample all fonts
+for f in $(cd /usr/share/figlet/ ; ls *.flf | sed 's/\..*//') ; do echo $f: ; figlet -t -f "$f" "text" ; done
+
+# use full terminal width:
+figlet -t "text"
+figlet -w $(tput cols) "text"
+
+# justification:
+# center:
+figlet -t -c "text"
+# left:
+figlet -t -l "text"
+# right:
+figlet -t -r "text"
