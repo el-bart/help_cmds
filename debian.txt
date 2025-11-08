@@ -29,3 +29,6 @@ apt list '?narrow(?installed, ?not(?origin(Debian)))'
 
 # install package w/o recommended part
 apt install --no-install-recommends some-package
+
+# update source files format (debian 12 -> 13)
+apt modernize-sources
