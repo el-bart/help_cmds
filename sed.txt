@@ -12,3 +12,6 @@ sed -n '/START/,/STOP/{//!p}'
 
 # delete lines matching a pattern
 sed '/REGEX/d'
+
+# replace 1st letter of each line with an upper-case equivalent
+sed 's#^\(.\)#\U&#'
