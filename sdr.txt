@@ -1,8 +1,11 @@
+# 433MHz is where typical house-hold thermometers transmit
+
 # getting live preview
 rtl_433
 # witj JSON output
 rtl_433 -F JSON
-# ^^ 433MHz is where typical house-hold thermometers transmit
+# otuput in SI units
+rtl_433 -C si
 
 # GUI for visualization / waterfall plot
 apt install cubicsdr
