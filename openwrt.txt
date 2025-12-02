@@ -1,0 +1,5 @@
+# upgrade system from command line
+ssh my-openwrt-server
+cd /tmp/
+wget https://downloads.openwrt.org/releases/24.10.4/targets/mediatek/filogic/openwrt-24.10.4-mediatek-filogic-openwrt_one-squashfs-sysupgrade.itb
+sysupgrade -v openwrt-24.10.4-mediatek-filogic-openwrt_one-squashfs-sysupgrade.itb
