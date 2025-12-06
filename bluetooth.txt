@@ -44,3 +44,17 @@ rfcomm0 {
 
 # check power level of the headeset
 upower --dump
+
+
+#
+# BTLE GATT profile
+#
+
+$ bluetoothctl
+connect 28:CD:C1:05:BD:53
+menu gatt
+list-attributes # look for 'Characteristic (Handle 0x....)' entries for readable / writable stuff
+select-attribute /org/bluez/hci0/dev_28_CD_C1_05_BD_53/service000b/char000c # from 'Characteristic' part
+read
+notify on
+notify off
