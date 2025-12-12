@@ -102,6 +102,16 @@ brctl addif vmbr0 vm0
 -device virtio-vga,max_outputs=4
 # note that '-vga virtio' may NOT be pased, to make this one work
 
+# other option for 4 screen VM with SPICE preview in 1 window per screen:
+# (on VM run: apt install qemu-system-modules-spice)
+opts+=(-device virtio-vga,max_outputs=4)
+opts+=(-display gtk)
+opts+=(-spice port=5900,addr=127.0.0.1,disable-ticketing=on,image-compression=off,seamless-migration=off)
+
+# preview:
+apt install virt-viewer
+remote-viewer spice://127.0.0.1:5900
+
 
 #
 # remote connection - VNC
@@ -120,11 +130,6 @@ xtigervncviewer localhost
 spicy --uri spice://localhost:5900
 # on client also do:
 apt install qemu-guest-agent
-
-
-#
-# remote connection - VNC
-#
 
 # qemu:
 -spice port=5900,addr=127.0.0.1,disable-ticketing
