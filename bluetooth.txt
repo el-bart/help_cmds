@@ -6,18 +6,48 @@ rfkill list
 rfkill unblock all
 rfkill list
 
-apt install bluez
-bluetoothctl
-# power on
-# agent on
-# default-agent
-# scan on
-# pair XX:XX:XX:XX:XX:XX
-# trust XX:XX:XX:XX:XX:XX
-# connect XX:XX:XX:XX:XX:XX
+#
+# managing multiple controllers
+#
+# show all availabel controllers
+list
+# change controller (<tab> to show options)
+select F0:2F:74:6B:13:F7
+# info about currently selected controller
+show
+# name current controller
+system-alias my_ctrl
+# set current one as default
+
+
+# scanning / pairing
+discoverable on
+pairing on
+
+# show info about current device
+info
+# list devices
+devices
+devices Paired
+devices Trusted
+devices Connected
+
+$apt install bluez
+$ bluetoothctl
+power on
+agent on
+default-agent
+scan on
+pair XX:XX:XX:XX:XX:XX
+trust XX:XX:XX:XX:XX:XX
+connect XX:XX:XX:XX:XX:XX
+# name it
+set-alias my_dev
+
 
 # to make pulseaudio work
 apt install pulseaudio-module-bluetooth
+apt install bluez-firmware
 
 #
 # serial port over BTLE == SPP profile
