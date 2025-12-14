@@ -81,6 +81,8 @@ qemu-system-x86_64 ... -snapshot ...
 
 # Pulseaudio-based sound I/O
 -audiodev pa,id=snd0 -device AC97,audiodev=snd0
+# the same, but ensuring that playback-only is possible (usefull to avoid qemu switching bluetooth from A2DP to HSP/HFP...)
+-audiodev pa,id=snd0 -device intel-hda -device hda-output,audiodev=snd0
 
 
 # create network bridge (needs root):
