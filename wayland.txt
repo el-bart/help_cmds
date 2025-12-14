@@ -1,0 +1,9 @@
+# tools equivalents for X11 + i3 combo:
+# X11 -> Wayland
+glxgears -> vkcube
+glxgears -> vkd3d-gears
+glxgears -> weston-simple-egl
+i3 -> sway
+xrandr -> wlr-randr
+xsel -> wl-copy / wl-paste
+xtrlock -> swaylock
