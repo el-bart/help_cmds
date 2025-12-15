@@ -6,3 +6,4 @@ lsblk
 lscpu
 lsusb
 lspci
+smartclt -a /dev/sda
