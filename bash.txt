@@ -81,4 +81,4 @@ realpath --relative-to=$PWD $PWD/a/b/c/xyz   # returns: a/b/c/xyz
 # find all files and directotries, for which user (owner) has no write perms + print which files are modified
 find  \( -type f -o -type d \) -exec chmod -c u+w {} +
 # find all elements for which user (owner) has no write perms + print which files are modified
-find . \! -perm -u=w -exec chmod -c u+w {} +
+find . \! -perm /u=w -exec chmod -c u+w {} +
