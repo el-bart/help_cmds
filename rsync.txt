@@ -6,6 +6,10 @@
 # -v -> verbose
 # -a -> archive
 # -q -> quiet
+# -i -> --itemize-changes
+# -t -> --times
+# -c -> --checksum
+
 # --delete -> delete files from destination that are not in source
 # --delete-excluded -> delete files that are not to be copied due to exclusion rules
 # --bwlimit=4.2m -> limit I/O to 4.2 MB/s
@@ -13,8 +17,12 @@
 # --inplace -> update files in place (huge boost in case of very large files!)
 # --include='**/foo/bar/*/config' -> include 'config' from all subdirs of any '/foo/bar/' dir
 # --exclude='**/foo/bar/*/**' -> exclude all elements that are below any subdir of any '/foo/bar/' dir
+# --itemize-changes -> explain the reson of an update (man rsync for details)
+# --times -> tells rsync to sync also times (TL;DR this should always be passed unless --size-only is used)
+# --size-only -> ignore times - compare sizes only
+# --checksum -> use file checksum for matching instead of mod-time+size combo
 
-time rsync -raP           soruce_dir             destination_dir
-time rsync -rzPl          remote:/path/to/stuff/ stuff
-time rsync -rzPl --delete remote:/path/to/stuff/ stuff
-time rsync -avz           remote:/path/to/stuff/ stuff
+time rsync -rtaP           soruce_dir             destination_dir
+time rsync -rtzPl          remote:/path/to/stuff/ stuff
+time rsync -rtzPl --delete remote:/path/to/stuff/ stuff
+time rsync -atvz           remote:/path/to/stuff/ stuff
