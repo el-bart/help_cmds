@@ -21,6 +21,7 @@
 # --times -> tells rsync to sync also times (TL;DR this should always be passed unless --size-only is used)
 # --size-only -> ignore times - compare sizes only
 # --checksum -> use file checksum for matching instead of mod-time+size combo
+# --chmod=u+rw -> make sure that the user (owner) has at least R/W perms on the other side, to avoid permissions error when updating
 
 time rsync -rtaP           soruce_dir             destination_dir
 time rsync -rtzPl          remote:/path/to/stuff/ stuff
