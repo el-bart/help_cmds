@@ -32,7 +32,7 @@ devices Paired
 devices Trusted
 devices Connected
 
-$apt install bluez
+$ apt install bluez
 $ bluetoothctl
 power on
 agent on
@@ -45,9 +45,11 @@ connect XX:XX:XX:XX:XX:XX
 set-alias my_dev
 
 
-# to make pulseaudio work
-apt install pulseaudio-module-bluetooth
-apt install bluez-firmware
+# to make pipewire work
+apt install bluez bluez-firmware bluez-tools
+
+# some GUI:
+apt install blueman
 
 #
 # serial port over BTLE == SPP profile

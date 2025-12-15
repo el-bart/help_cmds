@@ -16,7 +16,12 @@ apt install \
   pipewire-pulse \
   pipewire-jack \
   pipewire-v4l2 \
+  libspa-0.2-libcamera \
   libspa-0.2-bluetooth
+
+apt purge     pulseaudio
+apt-mark hold pulseaudio
+
 
 # restart config (note: needs to be ran as user!)
 systemctl --user restart pipewire pipewire-pulse wireplumber
