@@ -82,3 +82,18 @@ realpath --relative-to=$PWD $PWD/a/b/c/xyz   # returns: a/b/c/xyz
 find  \( -type f -o -type d \) -exec chmod -c u+w {} +
 # find all elements for which user (owner) has no write perms + print which files are modified
 find . \! -perm /u=w -exec chmod -c u+w {} +
+
+
+# running background processes with coproc:
+$ coproc stuff { bash ; }
+$ echo "background pid: $stuff_PID"
+background pid: 60847
+$ echo "FDs used:" "${stuff[@]}"
+FDs used: 63 60
+$ echo 'date -u' >&"${stuff[1]}"
+$ read line <&"${stuff[0]}"
+$ echo "$line"
+Tue Dec 16 20:36:34 UTC 2025
+$ jobs -p
+60847
+$ kill "$stuff_PID"
