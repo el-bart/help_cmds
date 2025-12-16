@@ -49,6 +49,10 @@ git push origin :refs/tags/<tag_to_be_removed>
 # remove branch from a remote repo
 git push origin :<branch_to_be_removed>
 
+# get time of creation of a given tag
+$ git for-each-ref --format="%(refname:short) %(creatordate:iso8601-strict)" refs/tags/v1.2.3
+v1.2.3 2023-09-07T15:54:40+02:00
+
 # find all branches, that contain a given commit
 git br -a --contains abcdef
 
