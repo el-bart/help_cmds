@@ -52,6 +52,10 @@ git push origin :<branch_to_be_removed>
 # get time of creation of a given tag
 $ git for-each-ref --format="%(refname:short) %(creatordate:iso8601-strict)" refs/tags/v1.2.3
 v1.2.3 2023-09-07T15:54:40+02:00
+# print 10 most recent tags along with date of creation - ISO + TZ
+git for-each-ref '--format=%(creatordate:format-local:%Y-%m-%dT%H:%M:%S/%z) %(refname:short)' --sort=-creatordate refs/tags/* | head
+# print 10 most recent tags along with date of creation - UNIX timestamp
+git for-each-ref '--format=%(creatordate:unix) %(refname:short)' --sort=-creatordate refs/tags/* | head
 
 # find all branches, that contain a given commit
 git br -a --contains abcdef
