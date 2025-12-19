@@ -13,4 +13,4 @@ zr - open 1 level
 zm - close 1 level
 
 zo - open current
-ZO - recursive open current
+zO - recursive open current
