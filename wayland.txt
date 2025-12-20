@@ -7,3 +7,8 @@ i3 -> sway
 xrandr -> wlr-randr
 xsel -> wl-copy / wl-paste
 xtrlock -> swaylock
+
+# desktop manager:
+greetd
+gtkgreet
+wlgreet
