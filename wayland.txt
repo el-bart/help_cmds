@@ -12,3 +12,6 @@ xtrlock -> swaylock
 greetd
 gtkgreet
 wlgreet
+
+# remote desktop:
+ssh -L 5900:localhost:5900 user@host WAYLAND_DISPLAY=wayland-1 wayvnc
