@@ -20,3 +20,6 @@ resize2fs /dev/sda1 23G
 resize2fs /dev/sda1
 # decrease size of ext4 partition, to be as small as possible (keeping the data; only offline):
 resize2fs -M /dev/sda1
+
+# remove all signatures (RAID, LVM, etc...) from disk:
+wipefs -af /dev/sdX
