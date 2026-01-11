@@ -10,8 +10,10 @@ rtl_433 -C si
 # GUI for visualization / waterfall plot
 apt install cubicsdr
 CubicSDR
+
 # alt:
-SDR++
+apt install gqrx-sdr
+gqrx
 
 
 # (W)M-bus (electricity / water / gas meters)
@@ -38,7 +40,6 @@ apt install gnuradio
 
 # Chris
 
-gqrx-sdr - Software defined radio receiver
 multimon-ng - digital radio transmission decoder
 
 https://konektor5000.pl/index.php?p4657,yard-stick-one-great-scott-gadgets-nadajnik-odbiornik-sdr-3-pasmowy-np-do-radio-hackingu
