@@ -26,6 +26,9 @@ trap 'echo 42' EXIT
 # read entries into array
 readarray -t my_array < file.txt
 
+# get a random permutation of a list of files in the array
+mapfile -t array < <(shuf -e *.*)
+
 # send stdout and stderr of the remaining part of the script to the "out.log" file
 exec > "out.log" 2>&1
 
