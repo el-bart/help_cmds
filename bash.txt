@@ -100,3 +100,6 @@ Tue Dec 16 20:36:34 UTC 2025
 $ jobs -p
 60847
 $ kill "$stuff_PID"
+
+# disable buffering on dos2unix, to ensure smoother data flow, when low-volume
+cat file.txt | stdbuf -o0 dos2unix | ncat localhost 1234
