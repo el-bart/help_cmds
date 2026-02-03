@@ -13,6 +13,10 @@ done
 ${#array[@]}
 
 
+# defining constants
+readlonly answer=42
+
+
 # trap with function
 function finish()
 {
