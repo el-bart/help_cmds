@@ -107,3 +107,12 @@ $ kill "$stuff_PID"
 
 # disable buffering on dos2unix, to ensure smoother data flow, when low-volume
 cat file.txt | stdbuf -o0 dos2unix | ncat localhost 1234
+
+
+# create a runable script based on all parameters to the current script / function
+cat > my_script <<EOF
+#!/bin/bash
+echo before
+$(printf '%q ' "$@")
+echo after
+EOF
