@@ -14,3 +14,41 @@ zm - close 1 level
 
 zo - open current
 zO - recursive open current
+
+
+#
+# indentation
+#
+
+= - auto-format
+:> - increse indentation
+:< - decrease indentation
+
+:> n - increse indentation for n lines
+:< n - decrease indentation for n lines
+
+
+#
+# navigation
+#
+^f - forward one screen
+^b - backward one screen
+) - move to next sentence
+( - move to previous sentence
+{ - move to next paragraph
+} - move to previous paragraph
+
+
+#
+# editing
+#
+
+~ - change case of character
+
+
+#
+# commands
+#
+
+!cmd - execute command
+r !cmd - execute command and paste output
