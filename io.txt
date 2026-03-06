@@ -1,0 +1,14 @@
+# I/O stats preivew (every 2s)
+iostat -hx 2
+iostat -d 2
+iostat -dx 2
+
+# I/O stats per PID
+pidstat -d
+
+# dedicated I/O tools:
+iotop
+atop
+
+# I/O tab:
+htop
