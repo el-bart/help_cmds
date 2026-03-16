@@ -1,0 +1,6 @@
+# see USB bus usage
+modprobe usbmon
+usbtop
+
+# show USB tree with IDs
+lsusb -tv
