@@ -90,3 +90,21 @@ select-attribute /org/bluez/hci0/dev_28_CD_C1_05_BD_53/service000b/char000c # fr
 read
 notify on
 notify off
+
+
+#
+# check battery percentage of a headset
+#
+
+# get from bluetoothctl:
+$ echo "info C8:7B:23:9D:C1:25" | bluetoothctl | grep Battery
+	Battery Percentage: 0x1e (30)
+
+# query via upower:
+$ upower -e
+/org/freedesktop/UPower/devices/battery_hidpp_battery_0
+/org/freedesktop/UPower/devices/headphones_dev_C8_7B_23_9D_C1_25
+/org/freedesktop/UPower/devices/DisplayDevice
+$ upower -i /org/freedesktop/UPower/devices/headphones_dev_C8_7B_23_9D_C1_25 | grep percentage
+    percentage:          30%
+
