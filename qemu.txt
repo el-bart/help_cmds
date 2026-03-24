@@ -29,6 +29,11 @@ qemu-img convert -O qcow2 input.qcow2 output.qcow2
 # the same but with progress:
 qemu-img convert -p -O qcow2 input.qcow2 output.qcow2
 mv output.qcow2 input.qcow2
+# for non-trimmed files
+1. start VM with / in R/O
+2. zerofree -v /dev/sda1 (asusming EXT2/3/4 partition)
+3. poweroff
+4. qemu-img convert -p -O qcow2 input.qcow2 output.qcow2
 
 
 # start VM with 512MB RAM, 1 CPU, using disk image, w/o GUI

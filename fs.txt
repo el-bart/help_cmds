@@ -23,3 +23,6 @@ resize2fs -M /dev/sda1
 
 # remove all signatures (RAID, LVM, etc...) from disk:
 wipefs -af /dev/sdX
+
+# zero-out unused blocks for EXT2/3/4
+zerofree -v /dev/sda1
