@@ -1,7 +1,7 @@
 # check state
 cat /proc/mdstat
 
-# get more info on array
+# get more info on array (inc. UUID)
 mdadm --detail /dev/md0
 
 # add disk to RAID
