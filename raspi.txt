@@ -124,3 +124,51 @@ rpicam-vid -t 0 -n --codec libav --libav-format mpegts -o 'tcp://0.0.0.0:1234?li
 
 # recodinf MPEG-TS stream
 ffmpeg -i tcp://my-camera-address:1234 -c copy output.ts
+
+
+#
+# RasPi USB as eth card
+#
+https://www.raspberrypi.com/news/usb-gadget-mode-in-raspberry-pi-os-ssh-over-usb/
+https://github.com/raspberrypi/rpi-usb-gadget
+
+#
+# before 1st run
+#
+
+# 1. mount /boot partition
+
+# 2. edit / create "user-data" (cloud-init format) and append:
+```
+rpi:
+  enable_usb_gadget: true
+enable_ssh: true  # Optional but recommended when using gadget mode
+```
+
+# 3. cfg also user and keys:
+```
+users:
+  - name: pi
+    gecos: Raspberry Pi User
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAA... user@example.com
+    lock_passwd: true
+    passwd: $6$rounds=4096$...   # optional hashed password
+ssh_pwauth: false
+disable_root: true
+```
+
+
+#
+# on already installed OS
+#
+
+# 1 run on RasPi:
+apt install rpi-usb-gadget
+rpi-usb-gadget on
+reboot
+
+# 2. conect PC and enable DHCP in the interface towards RasPi
+# 3. ssh to 10.12.194.2 (or whatever network is setup for u)
