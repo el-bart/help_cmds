@@ -32,3 +32,7 @@ apt install --no-install-recommends some-package
 
 # update source files format (debian 12 -> 13)
 apt modernize-sources
+
+# make OS updated in non-interactive mode
+export DEBIAN_FRONTEND=noninteractive
+apt-get dist-upgrade -y
