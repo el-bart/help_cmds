@@ -16,3 +16,15 @@ ssh-keygen -p -f ~/.ssh/id_rsa
 
 # key combination to abort (broken) connection:
 enter~.
+
+
+# list availabel ciphers:
+ssh -Q ciphers
+
+# faster cipher (e.g. for data transfers):
+ssh -c aes256-gcm@openssh.com
+# as of writing, default is: chacha20-poly1305@openssh.com
+
+# faster cipher in ~/.ssh/config
+Host mynas
+Ciphers aes256-gcm@openssh.com
