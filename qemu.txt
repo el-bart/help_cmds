@@ -1,5 +1,7 @@
 # regain keyboard/mouse from VM: Alt_L + Ctrl_L + G
 
+# check image info
+qemu-img info disk.qcow2
 # create new, empty image:
 qemu-img create -f qcow2 -o size=32G disk.qcow2
 # add extra space to image:
