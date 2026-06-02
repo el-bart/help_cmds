@@ -270,7 +270,7 @@ c
 # run arm64 image with chroot:
 apt install qemu qemu-user-static binfmt-support
 cp /usr/bin/qemu-aarch64-static /mnt/disk/usr/local/bin/
-chroom /mnt/disk/usr/local/bin/
+chroot /mnt/disk/ /bin/bash
 
 
 # forwarding USB device to guest
