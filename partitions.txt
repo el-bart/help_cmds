@@ -1,5 +1,5 @@
 # list all partitions from a given disk
-partx -L /path/to/disk.img
+partx -l /path/to/disk.img
 
 # moutn all partitions from file to /dev/loop?p?
 partx -a /path/to/disk.img
@@ -8,3 +8,6 @@ partx -a /path/to/disk.img
 losetup -D
 # detach give loopback device
 losetup -d /dev/loop0p1
+
+# on some kernels 'losetup -D' does not free loop-partitions. if this happens, the workaround is to unload loopback module:
+rmmod loop
