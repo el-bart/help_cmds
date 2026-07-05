@@ -32,3 +32,7 @@ ffmpeg -framerate 30 -i "frame_%06d.jpg" -c:v libx264 -pix_fmt yuv420p -r 30 out
 
 # record raw mjpeg format stream from the camera in 1k@30fps
 ffmpeg -f v4l2 -input_format mjpeg -video_size 1920x1080 -framerate 30 -i /dev/video0 -c:v copy output.mkv
+
+# stabilize video
+ffmpeg -i input.mp4 -vf "vidstabdetect=shakiness=10:accuracy=15:result=transforms.trf" -f null -
+ffmpeg -i input.mp4 -vf "vidstabtransform=input=transforms.trf:smoothing=30" -c:a copy output_stable.mp4
