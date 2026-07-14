@@ -24,8 +24,9 @@ https://ollama.com/library
 * llama3.1:405b
 * llama3.1:70b
 * llama3.1:8b
+* llama3.2:1b (tiny model)
 * qwen3
-* qwen3.5 (sait to be on the level of sonet 4.5)
+* qwen3.5 (said to be on the level of sonet 4.5)
 * qwen2.5-coder
 * qwen3-coder
 * kimi k2.6 (one of the top ones as per 2026-06)
