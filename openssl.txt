@@ -1,5 +1,8 @@
 # generate new key and cert
-openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout mycert.pem -out mycert.pem
+openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout key.pem -out cert.pem
+
+# generate new key and cert
+openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout key.pem -out cert.pem -subj "/C=PL/ST=State/L=City/O=Org/OU=Unit/CN=example.com"
 
 # print out certificate in a human-readable form
 openssl x509 -in mycert.pem -noout -text
