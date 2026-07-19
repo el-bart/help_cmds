@@ -14,7 +14,7 @@ git pull --allow-unrelated-histories /path/to/XXX repo
 
 # after extraction, cleanup git's pack files (affects local copy only - remote clones / pushes are fine):
 git reflog expire --expire=now --all
-git gc --prune=now --aggressiv
+git gc --prune=now --aggressive
 
 # remove anything but given dirs from repo's history
 # (based on: https://cjohansen.no/git-subtree-multiple-dirs/)
