@@ -1,0 +1,5 @@
+# remove password protections from the PDF
+qpdf --password="topis_kret" --decrypt input.pdf output.pdf
+
+# check differences between 2 PDF files
+diffpdf prev.pdf new.pdf
