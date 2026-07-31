@@ -116,3 +116,6 @@ echo before
 $(printf '%q ' "$@")
 echo after
 EOF
+
+# convert tabs to spaces
+expand input.txt
