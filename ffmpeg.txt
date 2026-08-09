@@ -19,7 +19,9 @@ ffmpeg -i "input.avi" -c copy -ss "HH:MM:SS.s" -to "HH:MM:SS.s" "output.avi"
 ffmpeg -ss HH:MM:SS.s -to HH:MM:SS.s -i input.mkv -vcodec h264 -acodec mp3 -crf 20 output.avi
 
 # extract audio from video
-ffmpeg -i "input.avi" -acodec mp3 "output.avi"
+ffmpeg -i "input.avi" -vn -acodec mp3 "output.mp3"
+# or keep the original encoding
+ffmpeg -i "input.avi" -vn -c:a copy "output.ogg"
 
 # format change
 ffmpeg -i "input.avi" -qscale 1 "output.avi"
