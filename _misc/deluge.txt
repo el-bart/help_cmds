@@ -1,4 +1,5 @@
 1. edit 'Downloads' paths in /var/lib/deluged/config/core.conf
 2. add 'user:topisycretpassword:10' to /var/lib/deluged/config/auth
-3. add 'user:topisycretpassword:10' to ~/.config/deluge/auth
-4. run deluge-console to access the service
+3. run deluge-console to access the service
+4. press 'D' to delete default entry
+5. press 'a' to add new entry (use user+pass from above and localhost:58846 for server)
