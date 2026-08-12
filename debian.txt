@@ -37,6 +37,11 @@ apt modernize-sources
 export DEBIAN_FRONTEND=noninteractive
 apt-get dist-upgrade -y
 
+# reinstall specific package
+apt install --reinstall htop
+
+# check all installed files:
+debsums -c
 
 # download given package into a current directory (no need for root)
 apt download htop
