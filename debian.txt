@@ -36,3 +36,16 @@ apt modernize-sources
 # make OS updated in non-interactive mode
 export DEBIAN_FRONTEND=noninteractive
 apt-get dist-upgrade -y
+
+
+# download given package into a current directory (no need for root)
+apt download htop
+
+# to list dependencies of a package:
+apt rdepends --recurse htop
+# or as a list:
+apt rdepends --recurse htop 2>/dev/null | grep '^  Depends' | awk '{ print $2 }' | sort -u
+
+# to download the pacakge (with deps), w/o the ones already installed:
+apt-get --download-only -y install htop
+cp -v /var/cache/apt/archives/*.deb /path/to/destination/
