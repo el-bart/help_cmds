@@ -1,0 +1,12 @@
+# generated password file
+dd if=/dev/urandom of=/path/to/key.bin bs=4096 count=1
+# create a disk formatted with that key (NOTE: keep 1 more password, in case the file is gone):
+cryptsetup luksFormat /dev/my-disk /path/to/key.bin
+
+# add a proper entry to /etc/crypttab
+my_crypt_dev_2 UUID=xxx-xxx-xxx-xxxx /path/to/key.bin luks
+# here's where to check for UUIDs:
+ls -l /dev/disk/by-uuid/
+
+# ...or add a key file to an existing disk:
+cryptsetup luksAddKey --key-file /path/to/key.bin /dev/my-disk
