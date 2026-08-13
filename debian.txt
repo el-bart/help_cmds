@@ -43,6 +43,9 @@ apt install --reinstall htop
 # check all installed files:
 debsums -c
 
+# install package version from a specific distro release:
+apt install -t trixie-backports --allow-downgrades nvidia-drive
+
 # download given package into a current directory (no need for root)
 apt download htop
 
