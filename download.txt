@@ -1,6 +1,10 @@
 # parallel download client
 aria2c
 
+#
+# curl
+#
+
 # set of curl flags that will not be verbose but still will show errors and return error codes back to shell
 curl \
   --silent \
@@ -16,3 +20,17 @@ curl -L baszerr.eu
 
 # common use case to make curl useful in scripts:
 curl -fsSL baszerr.eu
+
+
+#
+# wget
+#
+
+# get page ignoring certs checks:
+wget --no-check-certificate https://baszerr.eu
+
+# get page and print on the screen:
+wget -O - https://baszerr.eu
+
+# get page showing dotted progress bar
+wget --progress=dot https://baszerr.eu
