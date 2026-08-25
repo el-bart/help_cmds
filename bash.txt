@@ -121,7 +121,9 @@ EOF
 expand input.txt
 
 
-# shuffle order of lines from file
+# shuffle order of lines from file:
 shuf file.txt
-# shuffle arguments
+# shuffle arguments:
 shuf -e "alice has a cat" "foo bar" "narf"
+# create arrach of randomized files:
+mapfile -t list < <(shuf -e *)
