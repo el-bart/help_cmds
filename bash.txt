@@ -124,4 +124,4 @@ expand input.txt
 # shuffle order of lines from file
 shuf file.txt
 # shuffle arguments
-shuf "alice has a cat" "foo bar" "narf"
+shuf -e "alice has a cat" "foo bar" "narf"
