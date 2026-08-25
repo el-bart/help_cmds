@@ -119,3 +119,9 @@ EOF
 
 # convert tabs to spaces
 expand input.txt
+
+
+# shuffle order of lines from file
+shuf file.txt
+# shuffle arguments
+shuf "alice has a cat" "foo bar" "narf"
