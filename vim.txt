@@ -44,6 +44,11 @@ zO - recursive open current
 #
 
 ~ - change case of character
+u - lower-case of character
+U - upper-case of character
+
+# delete lines matching the pattern
+:g/pattern/d
 
 
 #
