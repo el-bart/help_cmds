@@ -28,3 +28,6 @@ ssh -c aes256-gcm@openssh.com
 # faster cipher in ~/.ssh/config
 Host mynas
 Ciphers aes256-gcm@openssh.com
+
+# open SSH and sudo to interactive shell immediately:
+ssh -t host.name sudo -i
