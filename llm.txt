@@ -1,3 +1,7 @@
+# benchmarks: price vs. capabilities (general, coding, etc...)
+https://openrouter.ai/rankings#benchmarks
+
+
 #
 # Ollama:
 #
