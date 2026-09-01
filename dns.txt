@@ -1,0 +1,5 @@
+# quad9 (Swiss-based; blocks malware and some adds)
+https://quad9.net/service/service-addresses-and-features/
+
+# DNS4EU (EU-based; can block adds, child-protection mode)
+https://joindns4.eu/
