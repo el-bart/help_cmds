@@ -32,12 +32,23 @@ ollama ps
 * llama3.1:70b
 * llama3.1:8b
 * llama3.2:1b (tiny model)
+* qwen3.8:27b
+* qwen2.5-coder:14b (Q5) (16GB VRAM)
+* qwen3-coder:30b (24GB VRAM)
 * qwen3
-* qwen3.5:9b-q8_0 (fits on 16GB GPU, but cannot run commands)
+* qwen3.5:9b-q8_0 (fits on 16GB GPU)
 * qwen3.5 (said to be on the level of sonet 4.5)
 * qwen2.5-coder
 * qwen3-coder
 * kimi k2.6 (one of the top ones as per 2026-06)
+
+# NOTE: if model has issues running commands, it's usually because of a too small context size try this:
+$ cat /path/to/gpt-oss-20b-128k
+FROM gpt-oss:20b
+PARAMETER num_ctx 131072
+$ ollama create gpt-oss-20b-128k -f /path/to/gpt-oss-20b-128k
+# and then use 'gpt-oss-20b-128k' model instead of the default one
+
 
 # check AMD GPU usage:
 rocm-smi
