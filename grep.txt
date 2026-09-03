@@ -1,0 +1,17 @@
+# print only first 3 matches per file
+grep -m 3 foobar *
+
+# print filenames before each matches
+grep -H foobar *
+
+# not not print filenames before each matches
+grep -h foobar *
+
+# print 2 lines of context before and after each match
+grep -2 foobar *
+
+# print 2 lines of context after each match
+grep -A 2 foobar *
+
+# print 2 lines of context before each match
+grep -B 2 foobar *
