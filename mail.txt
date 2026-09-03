@@ -1,0 +1,23 @@
+# SPF (Sender Policy Framework)
+specifies which mail servers are authorized to send email for a domain.
+
+# DKIM (DomainKeys Identified Mail)
+adds a cryptographic signature to outgoing messages so recipients can verify they weren’t altered and came from an authorized domain.
+the 'selector' part (e.g. 20211119-2fki) is specific to sender.
+it can be obtained fromheaders of a received e-mail.
+
+# DMARC (Domain-based Message Authentication, Reporting, and Conformance)
+uses SPF and DKIM results to decide what to do with unauthenticated messages and provides reporting.
+
+
+# SPF
+$ dig TXT baszerr.eu +short
+"v=spf1 include:_spf.mailfence.com -all"
+
+# DKIM
+$ dig txt 20211119-2fki._domainkey.baszerr.eu +short
+"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyQACay3OHMxDG4dvAvxrP6jMJS+De9IenDlAOmCvd1JyMmM2/vKcUQWRSBjEtGonsKKQ64w7eThdf0P9igOUSwkxrNI94LZlwV1YcEno+aygP6lM6CF/9G+l64IMcRdA6vQEImTYtKgnt7GAisuTQfkeG+W/Cmi8bxe7EwcZt1EI3CPDWPQvT7Y0MsWg" "zwof70fDxhF8Bj/Qp82cMYR2pgOIAvk3FJ2/0mfW5Bd46Nec63IFeFg6r/3/WK2jtuV73iL0hAxQwh2uatNJsgSwl8jzWYIGNGbIpc0ezg6yXEQ12ds98qIKiiXAyUX+y5B8t6fhcoN0qfViwB47LFIH3QIDAQAB"
+
+# DMARC
+$ dig TXT _dmarc.baszerr.eu +short
+"v=DMARC1; p=reject; rua=mailto:reports@baszerr.eu"
