@@ -1,4 +1,12 @@
 #
+# eth
+#
+
+# check speed of the interface
+ethtool eth0 | grep -e Speed -e Duplex
+
+
+#
 # channel bonding
 #
 
