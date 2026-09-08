@@ -1,3 +1,7 @@
+#
+# channel bonding
+#
+
 modprobe bonding mode=0 miimon=100
 
 ifconfig eth0 down
