@@ -57,3 +57,22 @@ U - upper-case of character
 
 !cmd - execute command
 r !cmd - execute command and paste output
+
+
+#
+# vimdiff
+#
+
+# select diff to apply
+:diffget LOCAL    " keep your version
+:diffget REMOTE   " keep the incoming version
+:diffget BASE     " use the common ancestor
+
+# navigation
+]c       " jump to the next changed section
+[c       " jump to the previous changed section
+do       " obtain changes from the other window
+dp       " put changes into the other window
+
+# next non-trivial merge:
+/<<<<<<
