@@ -4,6 +4,10 @@ git fetch bb master:master
 # common ancestor of 2 branches (eg. for 3-way merge)
 git merge-base branch2 branch3
 
+# use dedicated tool for merging
+git merge --tool vimdiff
+git merge --tool kdiff3
+
 # extract subdir as a separate repo
 git clone XXX
 cd XXX
