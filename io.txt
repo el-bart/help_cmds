@@ -12,3 +12,6 @@ atop
 
 # I/O tab:
 htop
+
+# GPU top (AMD, Intel and Nvidia)
+nvtop
