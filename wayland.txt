@@ -16,3 +16,10 @@ wlgreet
 
 # remote desktop:
 ssh -L 5900:localhost:5900 user@host WAYLAND_DISPLAY=wayland-1 wayvnc
+
+# screen sharing guide:
+https://botmonster.com/self-hosting/wayland-screen-sharing-fix-video-calls-linux/
+# make sure session is set correctly
+[ "${SWAYSOCK:-}" == "" ] || export XDG_CURRENT_DESKTOP="sway"
+# test if it works end to end:
+grim -g "$(slurp)" screenshot.png
