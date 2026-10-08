@@ -7,6 +7,9 @@ sed '/START/,/STOP/{//!d}'
 # print lines between START and STOP patterns (inc. START and STOP)
 sed -n '/START/,/STOP/p'
 
+# print lines between START and STOP patterns (inc. START and STOP) - only the 1st set
+sed -n '/START/,/STOP/{p; /STOP/q;}'
+
 # print lines between START and STOP patterns (w/o START and STOP)
 sed -n '/START/,/STOP/{//!p}'
 
