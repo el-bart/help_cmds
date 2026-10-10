@@ -20,3 +20,14 @@ ifconfig bond0 192.168.55.55 up           # to set ethX interfaces as slave the 
 
 ifenslave bond0 eth0
 ifenslave bond0 eth1
+
+
+#
+# routing
+#
+
+# show tables and rules what's used where
+ip rule show
+
+# show table 12345
+ip r show table 12345
