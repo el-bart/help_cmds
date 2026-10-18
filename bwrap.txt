@@ -1,0 +1,27 @@
+# run restricted shell, with R/O access to binaries and separate PID space
+bwrap \
+  --ro-bind /usr /usr \
+  --symlink usr/lib64 /lib64 \
+  --proc /proc \
+  --dev /dev \
+  --unshare-pid \
+  --new-session \
+  --die-with-parent \
+  bash
+
+
+# run w/onetwork and tmpfs for /tmp
+bwrap \
+  --ro-bind /usr /usr \
+  --ro-bind /bin /bin \
+  --ro-bind /lib /lib \
+  --ro-bind /lib64 /lib64 \
+  --proc /proc \
+  --dev /dev \
+  --tmpfs /tmp \
+  --chdir "/tmp" \
+  --unshare-pid \
+  --unshare-net \
+  --new-session \
+  --die-with-parent \
+  ./program
