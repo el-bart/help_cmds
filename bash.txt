@@ -127,3 +127,9 @@ shuf file.txt
 shuf -e "alice has a cat" "foo bar" "narf"
 # create arrach of randomized files:
 mapfile -t list < <(shuf -e *)
+
+
+# show number of seconds from shell's start:
+echo $SECONDS
+# define a 30s timeout from now:
+local readonly deadline=$((SECONDS + 30))
