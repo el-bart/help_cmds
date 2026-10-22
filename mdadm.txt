@@ -21,6 +21,9 @@ mdadm --grow /dev/md1 --size max
 # cancel checking of all RAIDs
 /usr/share/mdadm/checkarray -x --all
 
+# cancel checking of the array
+mdadm --action=idle /dev/md2
+
 # explicitly starting (incomplete) array
 mdadm --run /dev/md1
 
