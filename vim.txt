@@ -63,6 +63,9 @@ r !cmd - execute command and paste output
 # vimdiff
 #
 
+# check to the other window
+^w w
+
 # select diff to apply
 :diffget LOCAL    " keep your version
 :diffget REMOTE   " keep the incoming version
