@@ -25,6 +25,10 @@ ollama list
 # check CPU / GPU usage
 ollama ps
 
+# show model details, like quantization:
+ollama show qwen3.6:35b
+
+
 # models list:
 # https://ollama.com/library
 * llama3.1
