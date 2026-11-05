@@ -133,3 +133,6 @@ mapfile -t list < <(shuf -e *)
 echo $SECONDS
 # define a 30s timeout from now:
 local readonly deadline=$((SECONDS + 30))
+
+# print 'A' 300 times:
+printf 'A%.0s' {1..300}
