@@ -27,8 +27,10 @@ trap finish EXIT
 # direct trap
 trap 'echo 42' EXIT
 
-# read entries into array
+# read entries from file into array
 readarray -t my_array < file.txt
+# read lines from command into array
+readarray -t my_array <<< "$(find -name '*.txt')"
 
 # get a random permutation of a list of files in the array
 mapfile -t array < <(shuf -e *.*)
