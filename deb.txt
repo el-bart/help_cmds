@@ -9,3 +9,9 @@ ar x my.deb
 
 # list all pacakges by their installed size
 dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
+
+# scripts call sequence (see also https://salivity.github.io/debian/article/debian-maintainer-scripts-preinst-postinst-prerm-postrm)
+* installation: preinst (install) → unpack files → postinst (configure)
+* upgrade: old prerm (upgrade) → new preinst (upgrade) → unpack files → old postrm (upgrade) → new postinst (configure)
+* removal (remove): prerm (remove) → delete package files → postrm (remove)
+* purge (purge): runs postrm (purge) to delete lingering configurations and data.
