@@ -172,3 +172,11 @@ reboot
 
 # 2. conect PC and enable DHCP in the interface towards RasPi
 # 3. ssh to 10.12.194.2 (or whatever network is setup for u)
+
+
+#
+# disable 1st-time "hello screen"
+#
+1. mount SD partition #1
+2. vi /usr/lib/systemd/system/userconfig.service
+3. replace ExecStart=... with ExecStart=/bin/true
