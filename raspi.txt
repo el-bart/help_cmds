@@ -179,4 +179,4 @@ reboot
 #
 1. mount SD partition #1
 2. vi /usr/lib/systemd/system/userconfig.service
-3. replace ExecStart=... with ExecStart=/bin/true
+3. replace ExecStart=... with ExecStart=systemctl enable --now getty@tty1
