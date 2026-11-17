@@ -31,3 +31,14 @@ ip rule show
 
 # show table 12345
 ip r show table 12345
+
+
+#
+# DHCP
+#
+
+# prevent DHCP's auto-conf address
+vi /etc/dhcpcd.conf
+# add:
+timeout 0
+noipv4ll
