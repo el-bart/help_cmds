@@ -194,6 +194,14 @@ apt autoremove userconf-pi
 
 
 #
+# disable banner:
+# Wi-Fi is currently blocked by rfkill.
+# Use raspi-config to set the country before use.
+#
+rm -f /etc/profile.d/wifi-check.sh
+
+
+#
 # switch from NetworkManager to classical ifupdown
 #
 apt install ifupdown
