@@ -37,8 +37,15 @@ ip r show table 12345
 # DHCP
 #
 
-# prevent DHCP's auto-conf address
-vi /etc/dhcpcd.conf
+# prevent DHCP's auto-conf address on slow servers
+apt install isc-dhcp-client
+vi /etc/dhcp/dhclient.conf
 # add:
-timeout 0
-noipv4ll
+timeout 200;
+
+# or better:
+# /etc/network/interfaces.d/wan0
+allow-hotplug wan0
+iface wan0 inet dhcp
+  timeout 200
+  retry 30
