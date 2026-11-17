@@ -191,3 +191,12 @@ reboot
 rm -rf /usr/share/userconf-pi/sshd_banner
 # or:
 apt autoremove userconf-pi
+
+
+#
+# switch from NetworkManager to classical ifupdown
+#
+apt install ifupdown
+systemctl disable --now NetworkManager
+systemctl disable --now NetworkManager-wait-online
+systemctl enable  --now networking
