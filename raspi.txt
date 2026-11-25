@@ -208,3 +208,16 @@ apt install ifupdown
 systemctl disable --now NetworkManager
 systemctl disable --now NetworkManager-wait-online
 systemctl enable  --now networking
+
+
+#
+# disable swap
+#
+vi /etc/dphys-swapfile
+# replace:
+CONF_SWAPSIZE=512
+# with:
+CONF_SWAPSIZE=0
+
+# alt:
+apt purge dphys-swapfile
