@@ -119,6 +119,14 @@ $(printf '%q ' "$@")
 echo after
 EOF
 
+# write to a file, allowing indentation (note: must be indented with tabs! spaces are copied verbatim)
+	cat > test <<-EOF
+		line
+		other stuff
+		foo bar
+	EOF
+
+
 # convert tabs to spaces
 expand input.txt
 
